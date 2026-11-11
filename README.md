@@ -20,9 +20,9 @@ Sou estudante de **Sistemas de Informação** (4º período, Faculdade Dom Bosco
 
 | Projeto | Área | Estado | Resumo |
 |---|---|---|---|
-| [**Campus AI**](https://pedrosilva-c.github.io/portfolio/#projeto-campus-ai) | Automação · Python | `WIP` | Assistente acadêmico para Windows: organiza materiais e prazos do Moodle em notas do Obsidian. PySide6, Playwright, SQLite e extensão de navegador. 566 testes automatizados |
-| [**Kaizen Tech**](https://pedrosilva-c.github.io/portfolio/#projeto-kaizen-tech) | Suporte · Windows | `funcional` | Utilitário de manutenção para técnicos: diagnóstico, limpeza com confirmação, ponto de restauração e relatório do atendimento em PDF |
-| [**Inclusão 360°**](https://pedrosilva-c.github.io/portfolio/#projeto-inclusao-360) | Web · Acessibilidade | `concluído` | Demonstração prática de acessibilidade digital com leitura em voz alta, VLibras e um desafio de correção |
+| [**Campus AI**](https://github.com/pedrosilva-c/campus-ai) | Automação · Python | `WIP` | Assistente acadêmico para Windows: organiza materiais e prazos do Moodle em notas do Obsidian. PySide6, Playwright, SQLite e extensão de navegador. 566 testes Python e 97 da extensão |
+| [**Kaizen Tech**](https://github.com/pedrosilva-c/kaizen-tech) | Suporte · Windows | `funcional` | Utilitário de manutenção para técnicos: diagnóstico, limpeza com confirmação, ponto de restauração e relatório do atendimento em PDF. Limpeza que não segue links ou junções |
+| [**Inclusão 360°**](https://github.com/pedrosilva-c/inclusao-360) · [demo](https://pedrosilva-c.github.io/inclusao-360/) | Web · Acessibilidade | `concluído` | Demonstração prática de acessibilidade digital com leitura em voz alta, VLibras e um desafio de correção |
 | [**Laboratório AD**](https://pedrosilva-c.github.io/portfolio/labs/lab-001.html) | Infraestrutura | `em documentação` | Domínio Active Directory em VirtualBox: Windows Server 2019 e duas estações Windows 10 em rede isolada |
 | [**BarberFlow**](https://pedrosilva-c.github.io/portfolio/#projeto-barberflow) | Acadêmico · em grupo | `especificação` | Projeto Integrador de 7 integrantes: requisitos, UML e arquitetura planejada em AWS |
 
