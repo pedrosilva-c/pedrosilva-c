@@ -1,4 +1,4 @@
-# Gera o banner do perfil e as capas dos repositórios a partir de brand/_source/render.html.
+﻿# Gera o banner do perfil e as capas dos repositórios a partir de brand/_source/render.html.
 # Requisito: Microsoft Edge. Opcional: Python com Pillow (reduz o tamanho dos PNG sem perda visível).
 # Uso (na raiz do repositório):  powershell -NoProfile -File .\brand\render.ps1
 
