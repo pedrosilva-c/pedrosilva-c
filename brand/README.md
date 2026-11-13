@@ -1,6 +1,6 @@
 # Identidade visual
 
-Referência única para o perfil, os repositórios e o [portfólio](https://pedrosilva-c.github.io/portfolio/).
+Referência única para o perfil, os repositórios e o [portfólio](https://pedro-osaka.github.io/portfolio/).
 
 ## Cores
 

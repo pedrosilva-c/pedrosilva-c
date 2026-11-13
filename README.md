@@ -2,7 +2,7 @@
 
 Trabalho no **suporte e na infraestrutura de TI** de uma empresa de transporte e curso **Sistemas de Informação** (4º período) na Faculdade Dom Bosco (AEDB). No dia a dia, cuido de estações Windows, usuários no Active Directory e rede. Quando um problema se repete, escrevo uma ferramenta em Python ou PowerShell para resolvê-lo, sempre com testes e limitações documentadas.
 
-**[Portfólio](https://pedrosilva-c.github.io/portfolio/)** · **[LinkedIn](https://www.linkedin.com/in/pedrosilva-sistemas/)** · **[Currículo (PDF)](https://pedrosilva-c.github.io/portfolio/assets/curriculo-pedro-henrique.pdf)** · **[contatopedromarketinglab@gmail.com](mailto:contatopedromarketinglab@gmail.com)**
+**[Portfólio](https://pedro-osaka.github.io/portfolio/)** · **[LinkedIn](https://www.linkedin.com/in/pedrosilva-sistemas/)** · **[Currículo (PDF)](https://pedro-osaka.github.io/portfolio/assets/curriculo-pedro-henrique.pdf)** · **[contatopedromarketinglab@gmail.com](mailto:contatopedromarketinglab@gmail.com)**
 
 <br>
 
@@ -60,43 +60,43 @@ Manutenção preventiva e corretiva nos laboratórios de informática; instalaç
 <table>
 <tr>
 <td width="50%" valign="top">
-<a href="https://github.com/pedrosilva-c/lab-active-directory"><img src="assets/covers/lab-active-directory.png" alt="Capa do Laboratório Active Directory"></a>
-<br><b><a href="https://github.com/pedrosilva-c/lab-active-directory">Laboratório Active Directory</a></b>
+<a href="https://github.com/Pedro-Osaka/lab-active-directory"><img src="assets/covers/lab-active-directory.png" alt="Capa do Laboratório Active Directory"></a>
+<br><b><a href="https://github.com/Pedro-Osaka/lab-active-directory">Laboratório Active Directory</a></b>
 <br><sub>Domínio Windows Server 2019 com cliente Windows 10 em rede isolada, mais scripts PowerShell somente leitura para coletar evidências.</sub>
 </td>
 <td width="50%" valign="top">
-<a href="https://github.com/pedrosilva-c/kaizen-tech"><img src="assets/covers/kaizen-tech.png" alt="Capa do Kaizen Tech"></a>
-<br><b><a href="https://github.com/pedrosilva-c/kaizen-tech">Kaizen Tech</a></b>
+<a href="https://github.com/Pedro-Osaka/kaizen-tech"><img src="assets/covers/kaizen-tech.png" alt="Capa do Kaizen Tech"></a>
+<br><b><a href="https://github.com/Pedro-Osaka/kaizen-tech">Kaizen Tech</a></b>
 <br><sub>Utilitário de manutenção para técnicos: diagnóstico, ponto de restauração, limpeza com confirmação e relatório do atendimento em PDF. 14 testes.</sub>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-<a href="https://github.com/pedrosilva-c/fleet-report-demo"><img src="assets/covers/fleet-report-demo.png" alt="Capa do Fleet Report Demo"></a>
-<br><b><a href="https://github.com/pedrosilva-c/fleet-report-demo">Fleet Report Demo</a></b>
+<a href="https://github.com/Pedro-Osaka/fleet-report-demo"><img src="assets/covers/fleet-report-demo.png" alt="Capa do Fleet Report Demo"></a>
+<br><b><a href="https://github.com/Pedro-Osaka/fleet-report-demo">Fleet Report Demo</a></b>
 <br><sub>Importação conferida de planilhas e relatórios diários em XLSX e PDF. FastAPI e SQLite, 20 testes, dados 100% fictícios.</sub>
 </td>
 <td width="50%" valign="top">
-<a href="https://github.com/pedrosilva-c/campus-ai"><img src="assets/covers/campus-ai.png" alt="Capa do Campus AI"></a>
-<br><b><a href="https://github.com/pedrosilva-c/campus-ai">Campus AI</a></b>
+<a href="https://github.com/Pedro-Osaka/campus-ai"><img src="assets/covers/campus-ai.png" alt="Capa do Campus AI"></a>
+<br><b><a href="https://github.com/Pedro-Osaka/campus-ai">Campus AI</a></b>
 <br><sub>Assistente acadêmico local que organiza materiais e prazos do Moodle no Obsidian. Protótipo com 566 testes Python e 97 da extensão.</sub>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-<a href="https://github.com/pedrosilva-c/inclusao-360"><img src="assets/covers/inclusao-360.png" alt="Capa do Inclusão 360°"></a>
-<br><b><a href="https://github.com/pedrosilva-c/inclusao-360">Inclusão 360°</a></b> · <a href="https://pedrosilva-c.github.io/inclusao-360/">demo ao vivo</a>
+<a href="https://github.com/Pedro-Osaka/inclusao-360"><img src="assets/covers/inclusao-360.png" alt="Capa do Inclusão 360°"></a>
+<br><b><a href="https://github.com/Pedro-Osaka/inclusao-360">Inclusão 360°</a></b> · <a href="https://pedro-osaka.github.io/inclusao-360/">demo ao vivo</a>
 <br><sub>Site para experimentar recursos de acessibilidade, com leitura em voz alta, VLibras e um desafio de correção. Projeto individual.</sub>
 </td>
 <td width="50%" valign="top">
-<a href="https://github.com/pedrosilva-c/portfolio"><img src="assets/covers/portfolio.png" alt="Capa do Portfólio"></a>
-<br><b><a href="https://github.com/pedrosilva-c/portfolio">Portfólio</a></b> · <a href="https://pedrosilva-c.github.io/portfolio/">site</a>
+<a href="https://github.com/Pedro-Osaka/portfolio"><img src="assets/covers/portfolio.png" alt="Capa do Portfólio"></a>
+<br><b><a href="https://github.com/Pedro-Osaka/portfolio">Portfólio</a></b> · <a href="https://pedro-osaka.github.io/portfolio/">site</a>
 <br><sub>Experiência, casos técnicos e laboratórios. HTML, CSS e JavaScript sem frameworks, publicado no GitHub Pages.</sub>
 </td>
 </tr>
 </table>
 
-Também participei do **[BarberFlow](https://pedrosilva-c.github.io/portfolio/#projeto-barberflow)**, Projeto Integrador em grupo de 7 integrantes (requisitos, UML e arquitetura planejada em AWS).
+Também participei do **[BarberFlow](https://pedro-osaka.github.io/portfolio/#projeto-barberflow)**, Projeto Integrador em grupo de 7 integrantes (requisitos, UML e arquitetura planejada em AWS).
 
 ## Certificações
 
