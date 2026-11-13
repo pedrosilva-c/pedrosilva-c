@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+  Gerador do banner do perfil e das capas dos repositórios.
+  Uso: render.html?id=<chave>  (ver brand/render.ps1)
+  Os diagramas mostram a arquitetura real de cada projeto, descrita nos READMEs.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1419; --surface:#151C23; --border:#2A3540; --grid:#1D2630;
+    --text:#E8ECF0; --muted:#9AA7B4; --soft:#C6D0DA;
+    --cyan:#5FB6C8; --petrol:#2B8A9E; --ok:#6CC79A; --wip:#E0A030;
+    --sans:Inter,"Segoe UI",system-ui,sans-serif; --mono:"JetBrains Mono",Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0}
+  html,body{background:transparent;overflow:hidden}
+  .card{position:absolute;inset:0;border-radius:20px;background:var(--bg);border:1px solid #222C36;overflow:hidden;font-family:var(--sans);color:var(--text)}
+  .card::before{content:"";position:absolute;inset:0;
+    background-image:radial-gradient(var(--grid) 1.3px,transparent 1.4px);background-size:28px 28px;
+    -webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 62%);mask-image:linear-gradient(90deg,transparent 30%,#000 62%)}
+  .bar{position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--petrol)}
+  .txt{position:absolute;display:flex;flex-direction:column}
+  .eyebrow{font-family:var(--mono);color:var(--muted);letter-spacing:.01em}
+  .eyebrow b{color:var(--cyan);font-weight:500}
+  h1{font-weight:700;letter-spacing:-.025em;line-height:1.05}
+  .role{color:var(--cyan);font-weight:600;letter-spacing:-.01em}
+  .desc{color:var(--muted);line-height:1.45}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{font-family:var(--mono);font-size:16px;color:var(--soft);background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:6px 12px}
+  .pill{align-self:flex-start;font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 14px 6px 30px;position:relative;border:1px solid}
+  .pill::before{content:"";position:absolute;left:13px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:currentColor}
+  .pill.ok{color:var(--ok);border-color:rgba(108,199,154,.35);background:rgba(108,199,154,.08)}
+  .pill.wip{color:var(--wip);border-color:rgba(224,160,48,.35);background:rgba(224,160,48,.08)}
+  .pill.info{color:var(--cyan);border-color:rgba(95,182,200,.35);background:rgba(95,182,200,.08)}
+  svg.dg{position:absolute;overflow:visible}
+  svg text{font-family:var(--sans)}
+  .n rect{fill:var(--surface);stroke:var(--border);stroke-width:1.5}
+  .n.p rect{stroke:var(--petrol);stroke-width:2}
+  .n.d rect{fill:transparent;stroke-dasharray:6 6}
+  .n .t{fill:var(--text);font-weight:600}
+  .n.d .t{fill:var(--muted)}
+  .n .s{fill:var(--muted);font-family:var(--mono)}
+  .e{fill:none;stroke:var(--petrol);stroke-width:2;stroke-linejoin:round}
+  .e.d{stroke:#3A4C5A;stroke-dasharray:6 6}
+  .dot{fill:var(--cyan)}
+  .lbl{fill:var(--muted);font-family:var(--mono)!important;font-size:13px}
+  .num{fill:var(--cyan);font-family:var(--mono)!important;font-size:14px}
+</style>
+</head>
+<body>
+<div class="card" id="card"><div class="bar"></div></div>
+<script>
+const W = {banner:[1280,320], cover:[1280,640]};
+
+// n(x,y,w,h,título,subtítulo,classe)   e([[x,y],...],classe)
+const n = (x,y,w,h,t,s,c="",ts=19,ss=13) => ({k:"n",x,y,w,h,t,s,c,ts,ss});
+const e = (pts,c="") => ({k:"e",pts,c});
+const lbl = (x,y,t,c="lbl",anchor="start") => ({k:"l",x,y,t,c,anchor});
+
+const DATA = {
+  banner: {
+    size:"banner",
+    eyebrow:"Sistemas de Informação · Resende, RJ",
+    title:"Pedro Henrique da Silva Pereira",
+    role:"Suporte e Infraestrutura de TI | Automação e Sistemas",
+    focus:"Windows Server · Active Directory · GPO · Redes · Python · PowerShell",
+    box:[840,44,400,236],
+    dg:[
+      e([[90,30],[150,30]]), e([[250,30],[310,30]]),
+      e([[200,50],[200,118]]),
+      e([[30,118],[370,118]]),
+      e([[55,118],[55,176]]), e([[150,118],[150,176]]), e([[250,118],[250,176]]), e([[345,118],[345,176]],"d"),
+      n(10,8,80,44,"DNS","",""), n(150,8,100,44,"AD DS","","p"), n(310,8,80,44,"GPO",""),
+      lbl(378,123,"LAN"),
+      n(10,176,90,44,"WS-01",""), n(105,176,90,44,"WS-02",""), n(205,176,90,44,"FILE",""), n(300,176,90,44,"AP","","d"),
+      lbl(345,240,"isolada","lbl","middle"),
+    ]
+  },
+  "lab-active-directory": {
+    repo:"lab-active-directory", status:["Em documentação","wip"],
+    title:"Laboratório<br>Active Directory",
+    desc:"Domínio Windows em VirtualBox, rede interna isolada e scripts PowerShell somente leitura para coletar evidências.",
+    chips:["Windows Server 2019","AD DS","PowerShell","VirtualBox"],
+    dg:[
+      e([[280,62],[280,122]],"d"),
+      e([[280,206],[280,282]]),
+      e([[150,282],[410,282]]),
+      e([[150,282],[150,352]]), e([[410,282],[410,352]],"d"),
+      n(190,10,180,52,"Internet","NAT · VirtualBox","d"),
+      n(110,122,340,84,"SERVER-DC","Windows Server 2019 · AD DS · DNS","p",22),
+      lbl(420,276,"labrede"), lbl(420,296,"rede interna"),
+      n(40,352,220,84,"CLIENTE02","Windows 10 22H2","",20),
+      n(300,352,220,84,"CLIENTE01","SO não instalado","d",20),
+    ]
+  },
+  "kaizen-tech": {
+    repo:"kaizen-tech", status:["Funcional","ok"],
+    title:"Kaizen Tech",
+    desc:"Utilitário de manutenção para técnicos de suporte, com relatório do atendimento em PDF ao final.",
+    chips:["Python","Tkinter","PowerShell","fpdf2"],
+    dg:[
+      e([[300,96],[300,140]]), e([[300,216],[300,260]]), e([[300,336],[300,380]]),
+      lbl(40,64,"01","num"), lbl(40,184,"02","num"), lbl(40,304,"03","num"), lbl(40,424,"04","num"),
+      n(90,20,420,76,"Diagnóstico","SO · CPU · RAM · disco · atualizações"),
+      n(90,140,420,76,"Ponto de restauração","Checkpoint-Computer"),
+      n(90,260,420,76,"Limpeza com confirmação","temporários · cache · lixeira"),
+      n(90,380,420,76,"Relatório do atendimento","PDF com o log de cada ação","p"),
+    ]
+  },
+  "campus-ai": {
+    repo:"campus-ai", status:["WIP · protótipo","wip"],
+    title:"Campus AI",
+    desc:"Assistente acadêmico local para Windows: organiza materiais e prazos do Moodle em notas do Obsidian.",
+    chips:["Python","PySide6","Playwright","SQLite","JavaScript"],
+    dg:[
+      e([[230,60],[262,60],[262,178],[300,178]]),
+      e([[230,178],[300,178]]),
+      e([[230,296],[262,296],[262,178]]),
+      e([[425,226],[425,330]]),
+      n(0,22,230,76,"Moodle","navegador dedicado"),
+      n(0,140,230,76,"Companion","extensão · página aberta"),
+      n(0,258,230,76,"Gmail","gmail.readonly"),
+      n(300,130,250,96,"Núcleo local","SQLite · prazos · histórico","p",21),
+      n(300,330,250,76,"Obsidian","notas Markdown"),
+      lbl(0,382,"somente leitura"),
+    ]
+  },
+  "fleet-report-demo": {
+    repo:"fleet-report-demo", status:["Funcional · dados fictícios","ok"],
+    title:"Fleet Report<br>Demo",
+    desc:"Importação conferida de planilhas de telemetria e relatórios diários em tela, XLSX e PDF.",
+    chips:["Python","FastAPI","SQLite","openpyxl","pytest"],
+    dg:[
+      e([[190,76],[190,120]]),
+      e([[380,158],[340,158]],"d"),
+      e([[190,196],[190,240]]),
+      e([[190,316],[190,350],[70,350],[70,380]]), e([[190,350],[310,350],[310,380]]), e([[190,350],[190,380]]),
+      n(20,0,340,76,"CSV / XLSX","planilha de eventos"),
+      n(20,120,320,76,"Conferência","linha a linha · motivo da rejeição","p"),
+      n(380,120,170,76,"Regras","rules.json","d",18),
+      n(20,240,340,76,"SQLite","lotes · SHA-256 · reversão"),
+      n(20,380,100,56,"JSON","","",18), n(140,380,100,56,"XLSX","","",18), n(260,380,100,56,"PDF","","",18),
+    ]
+  },
+  "inclusao-360": {
+    repo:"inclusao-360", status:["Concluído · v5.2","ok"],
+    title:"Inclusão 360°",
+    desc:"Site para experimentar recursos de acessibilidade e corrigir, na prática, um portal fictício.",
+    chips:["HTML","CSS","JavaScript","Web Speech API","VLibras"],
+    dg:[
+      e([[300,106],[300,160]]), e([[300,246],[300,300]]),
+      lbl(40,70,"01","num"), lbl(40,210,"02","num"), lbl(40,350,"03","num"),
+      n(90,20,420,86,"Experimente","texto maior · leitura em voz alta · VLibras","",21),
+      n(90,160,420,86,"Desafio","corrigir um portal fictício em 3 cliques","p",21),
+      n(90,300,420,86,"Libras","widget oficial do VLibras","",21),
+      lbl(90,430,"27/27 verificações de interface · Chromium"),
+    ]
+  },
+  portfolio: {
+    repo:"portfolio", status:["Publicado","info"],
+    title:"Portfólio",
+    desc:"Experiência, projetos, casos técnicos e laboratórios. Só entra o que tem comprovação.",
+    chips:["HTML","CSS","JavaScript","GitHub Pages"],
+    dg:[
+      e([[300,96],[300,140]]), e([[300,216],[300,260]]), e([[300,336],[300,380]]),
+      n(90,20,420,76,"js/data.js","todo o conteúdo em um arquivo"),
+      n(90,140,420,76,"js/script.js","renderização · tema · menu"),
+      n(90,260,420,76,"HTML + CSS","sem frameworks · claro e escuro"),
+      n(90,380,420,76,"GitHub Pages","pedrosilva-c.github.io/portfolio","p"),
+    ]
+  },
+};
+
+function svgEl(tag, attrs, parent){
+  const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (const [k,v] of Object.entries(attrs)) el.setAttribute(k, v);
+  parent && parent.appendChild(el); return el;
+}
+function drawDiagram(items, box, card){
+  const [x,y,w,h] = box;
+  const svg = svgEl("svg",{class:"dg",width:w,height:h,viewBox:`0 0 ${w} ${h}`});
+  svg.style.left = x+"px"; svg.style.top = y+"px";
+  const dots = [];
+  for (const it of items){
+    if (it.k==="e"){
+      svgEl("polyline",{class:"e "+it.c,points:it.pts.map(p=>p.join(",")).join(" ")},svg);
+      if (!it.c) dots.push(it.pts[0], it.pts[it.pts.length-1]);
+    } else if (it.k==="n"){
+      const g = svgEl("g",{class:"n "+it.c},svg);
+      svgEl("rect",{x:it.x,y:it.y,width:it.w,height:it.h,rx:10},g);
+      const cx = it.x + 22;
+      if (it.s){
+        const t = svgEl("text",{class:"t",x:cx,y:it.y+it.h/2-4,"font-size":it.ts},g); t.textContent = it.t;
+        const s = svgEl("text",{class:"s",x:cx,y:it.y+it.h/2+it.ss+6,"font-size":it.ss},g); s.textContent = it.s;
+      } else {
+        const t = svgEl("text",{class:"t",x:it.x+it.w/2,y:it.y+it.h/2+6,"font-size":it.ts>18?17:it.ts,"text-anchor":"middle"},g);
+        t.textContent = it.t; t.style.fontFamily = "var(--mono)"; t.style.fontWeight = 500;
+      }
+    } else if (it.k==="l"){
+      const t = svgEl("text",{class:it.c,x:it.x,y:it.y,"text-anchor":it.anchor},svg); t.textContent = it.t;
+    }
+  }
+  for (const p of dots) svgEl("circle",{class:"dot",cx:p[0],cy:p[1],r:3.5},svg);
+  card.appendChild(svg);
+}
+
+const id = new URLSearchParams(location.search).get("id") || "banner";
+const d = DATA[id];
+const card = document.getElementById("card");
+const txt = document.createElement("div"); txt.className = "txt";
+
+if (id === "banner"){
+  Object.assign(txt.style,{left:"64px",top:"0",bottom:"0",width:"760px",justifyContent:"center",gap:"0"});
+  txt.innerHTML = `
+    <div class="eyebrow" style="font-size:17px;margin-bottom:22px">${d.eyebrow}</div>
+    <h1 style="font-size:50px;margin-bottom:14px">${d.title}</h1>
+    <div class="role" style="font-size:25px;margin-bottom:26px">${d.role}</div>
+    <div class="eyebrow" style="font-size:16px">${d.focus}</div>`;
+  card.appendChild(txt);
+  drawDiagram(d.dg, d.box, card);
+} else {
+  Object.assign(txt.style,{left:"72px",top:"64px",bottom:"64px",width:"560px",justifyContent:"space-between"});
+  txt.innerHTML = `
+    <div>
+      <div class="eyebrow" style="font-size:18px;margin-bottom:28px">pedrosilva-c / <b>${d.repo}</b></div>
+      <span class="pill ${d.status[1]}">${d.status[0]}</span>
+      <h1 style="font-size:66px;margin:30px 0 24px">${d.title}</h1>
+      <p class="desc" style="font-size:24px">${d.desc}</p>
+    </div>
+    <div class="chips">${d.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>`;
+  card.appendChild(txt);
+  drawDiagram(d.dg, [680,96,560,460], card);
+}
+</script>
+</body>
+</html>
