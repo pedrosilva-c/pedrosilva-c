@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="286" viewBox="0 0 1280 286" role="img" aria-label="Perfil. atuação: Jovem Aprendiz · equipe de TI (Transmargoo · desde abr/2026); formação: Sistemas de Informação (4º período · Faculdade Dom Bosco (AEDB)); foco: Windows Server · AD · GPO · DNS · DHCP (suporte N1, hardware e redes); automação: Python · projetos próprios (PowerShell · em estudo)">
+<title>Perfil. atuação: Jovem Aprendiz · equipe de TI (Transmargoo · desde abr/2026); formação: Sistemas de Informação (4º período · Faculdade Dom Bosco (AEDB)); foco: Windows Server · AD · GPO · DNS · DHCP (suporte N1, hardware e redes); automação: Python · projetos próprios (PowerShell · em estudo)</title>
+<defs><clipPath id="c"><rect width="1280" height="286" rx="20"/></clipPath></defs>
+<g clip-path="url(#c)"><rect width="1280" height="286" fill="#0F1419"/>
+<rect width="1280" height="48" fill="#151C23"/><rect width="10" height="286" fill="#2B8A9E"/></g>
+<path d="M10 48.5H1280" stroke="#222C36"/>
+<rect x=".5" y=".5" width="1279" height="285" rx="20" fill="none" stroke="#222C36"/>
+<circle cx="36" cy="24.0" r="5" fill="#2A3540"/>
+<circle cx="54" cy="24.0" r="5" fill="#2A3540"/>
+<circle cx="72" cy="24.0" r="5" fill="#2B8A9E"/>
+<text x="100" y="29" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#9AA7B4" text-anchor="start" textLength="240.0" lengthAdjust="spacingAndGlyphs">pedro@infra:~$ cat perfil</text>
+<rect x="50.0" y="68" width="587.0" height="90" rx="12" fill="#151C23" fill-opacity=".55" stroke="#2A3540"/>
+<text x="70" y="93" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#2B8A9E" text-anchor="start">$</text>
+<text x="89.2" y="93" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#5FB6C8" text-anchor="start" textLength="67.2" lengthAdjust="spacingAndGlyphs">atuacao</text>
+<text x="70" y="121" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="22" font-weight="400" fill="#E8ECF0" text-anchor="start" textLength="382.8" lengthAdjust="spacingAndGlyphs">Jovem Aprendiz · equipe de TI</text>
+<text x="70" y="143" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#9AA7B4" text-anchor="start" textLength="268.8" lengthAdjust="spacingAndGlyphs">Transmargoo · desde abr/2026</text>
+<rect x="653.0" y="68" width="587.0" height="90" rx="12" fill="#151C23" fill-opacity=".55" stroke="#2A3540"/>
+<text x="673" y="93" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#2B8A9E" text-anchor="start">$</text>
+<text x="692.2" y="93" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#5FB6C8" text-anchor="start" textLength="76.8" lengthAdjust="spacingAndGlyphs">formacao</text>
+<text x="673" y="121" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="22" font-weight="400" fill="#E8ECF0" text-anchor="start" textLength="290.4" lengthAdjust="spacingAndGlyphs">Sistemas de Informação</text>
+<text x="673" y="143" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#9AA7B4" text-anchor="start" textLength="374.4" lengthAdjust="spacingAndGlyphs">4º período · Faculdade Dom Bosco (AEDB)</text>
+<rect x="50.0" y="174" width="587.0" height="90" rx="12" fill="#151C23" fill-opacity=".55" stroke="#2A3540"/>
+<text x="70" y="199" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#2B8A9E" text-anchor="start">$</text>
+<text x="89.2" y="199" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#5FB6C8" text-anchor="start" textLength="38.4" lengthAdjust="spacingAndGlyphs">foco</text>
+<circle cx="76.0" cy="219.08" r="5" fill="#6CC79A"/>
+<text x="90" y="227" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="22" font-weight="400" fill="#E8ECF0" text-anchor="start" textLength="501.6" lengthAdjust="spacingAndGlyphs">Windows Server · AD · GPO · DNS · DHCP</text>
+<text x="90" y="249" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#9AA7B4" text-anchor="start" textLength="268.8" lengthAdjust="spacingAndGlyphs">suporte N1, hardware e redes</text>
+<rect x="653.0" y="174" width="587.0" height="90" rx="12" fill="#151C23" fill-opacity=".55" stroke="#2A3540"/>
+<text x="673" y="199" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#2B8A9E" text-anchor="start">$</text>
+<text x="692.2" y="199" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#5FB6C8" text-anchor="start" textLength="86.4" lengthAdjust="spacingAndGlyphs">automacao</text>
+<circle cx="679.0" cy="219.08" r="5" fill="#5FB6C8"/>
+<text x="693" y="227" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="22" font-weight="400" fill="#E8ECF0" text-anchor="start" textLength="343.2" lengthAdjust="spacingAndGlyphs">Python · projetos próprios</text>
+<circle cx="679.0" cy="243.24" r="4.5" fill="none" stroke="#E0A030" stroke-width="1.8" stroke-dasharray="2.4 1.8"/>
+<text x="693" y="249" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="400" fill="#9AA7B4" text-anchor="start" textLength="211.2" lengthAdjust="spacingAndGlyphs">PowerShell · em estudo</text>
+</svg>

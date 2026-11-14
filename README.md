@@ -1,8 +1,19 @@
-<img src="assets/banner.png" alt="Pedro Henrique da Silva Pereira — Suporte e Infraestrutura de TI | Automação e Sistemas. Windows Server, Active Directory, GPO, DNS e DHCP, hardware e redes. Aberto a oportunidades." width="100%">
-
-<p align="center">
-<img src="assets/ui/whoami.svg" alt="whoami: Pedro Henrique da Silva Pereira. Cargo: Jovem Aprendiz na equipe de TI desde abr/2026. Formação: Sistemas de Informação, 4º período, AEDB. Foco: Windows Server, Active Directory, GPO, DNS, DHCP e redes. Automação: Python e PowerShell para problemas que se repetem. Status: aberto a oportunidades." width="100%">
-</p>
+<div align="center">
+<picture>
+<source media="(max-width: 600px)" srcset="assets/banner-mobile.png">
+<img src="assets/banner.png" alt="Pedro Henrique da Silva Pereira. Suporte e Infraestrutura de TI | Automação e Sistemas. Resende, RJ · Sistemas de Informação. Aberto a oportunidades." width="100%">
+</picture>
+<br>
+<a href="https://www.linkedin.com/in/pedrosilva-sistemas/"><img src="assets/ui/btn-linkedin.svg" alt="LinkedIn" height="42"></a>
+<a href="https://pedro-osaka.github.io/portfolio/"><img src="assets/ui/btn-portfolio.svg" alt="Portfólio" height="42"></a>
+<a href="https://pedro-osaka.github.io/portfolio/assets/curriculo-pedro-henrique.pdf"><img src="assets/ui/btn-curriculo.svg" alt="Currículo em PDF" height="42"></a>
+<a href="mailto:contatopedromarketinglab@gmail.com"><img src="assets/ui/btn-email.svg" alt="E-mail: contatopedromarketinglab@gmail.com" height="42"></a>
+<br>
+<picture>
+<source media="(max-width: 600px)" srcset="assets/ui/perfil-mobile.svg">
+<img src="assets/ui/perfil.svg" alt="Perfil. Atuação: Jovem Aprendiz na equipe de TI da Transmargoo, desde abr/2026. Formação: Sistemas de Informação, 4º período, Faculdade Dom Bosco (AEDB). Foco técnico (uso profissional): Windows Server, Active Directory, GPO, DNS e DHCP; suporte N1, hardware e redes. Automação e projetos: Python em projetos próprios; PowerShell em estudo." width="100%">
+</picture>
+</div>
 
 <details>
 <summary><b>Sobre mim</b></summary>
@@ -10,18 +21,9 @@
 
 Comecei no suporte dos laboratórios de informática da faculdade: formatação, drivers, periféricos, cabeamento e atendimento a alunos e professores. Hoje, na equipe de TI de uma empresa de transporte, cuido do dia a dia das estações e dos usuários. Já retomei um servidor Windows Server após uma queda de energia, corrigi um conflito de IP entre roteador e gateway e isolei o Wi-Fi de visitantes da rede interna.
 
-Quando um problema se repete, escrevo uma ferramenta em Python ou PowerShell para resolvê-lo. Cada projeto aqui documenta o problema, os testes e as limitações, e o status é sempre declarado: o que está em andamento aparece como **WIP** ou **em documentação**, nunca como concluído.
+Quando um problema se repete, escrevo uma ferramenta em Python para resolvê-lo; em PowerShell, faço scripts de apoio enquanto estudo a linguagem. Cada projeto aqui documenta o problema, os testes e as limitações, e o status é sempre declarado: o que está em andamento aparece como **WIP** ou **em documentação**, nunca como concluído.
 
 </details>
-
-## Connect with me
-
-<p align="center">
-<a href="https://www.linkedin.com/in/pedrosilva-sistemas/"><img src="assets/ui/btn-linkedin.svg" alt="LinkedIn" height="40"></a>&nbsp;
-<a href="https://pedro-osaka.github.io/portfolio/"><img src="assets/ui/btn-portfolio.svg" alt="Portfólio" height="40"></a>&nbsp;
-<a href="mailto:contatopedromarketinglab@gmail.com"><img src="assets/ui/btn-email.svg" alt="E-mail: contatopedromarketinglab@gmail.com" height="40"></a>&nbsp;
-<a href="https://pedro-osaka.github.io/portfolio/assets/curriculo-pedro-henrique.pdf"><img src="assets/ui/btn-curriculo.svg" alt="Currículo em PDF" height="40"></a>
-</p>
 
 ## Tech Stack
 
@@ -61,7 +63,7 @@ Quando um problema se repete, escrevo uma ferramenta em Python ou PowerShell par
 </p>
 
 <!-- stats:start -->
-<sub>Em texto: **6** projetos públicos · **50** commits nos repositórios públicos · **15** contribuições em **3** dias nos últimos 12 meses · conta criada em dez/2024. Linguagens (nº de repositórios): CSS (4) · HTML (4) · JavaScript (4) · Python (3) · PowerShell (2). Gerado pela API do GitHub em 13 nov 2026.</sub>
+<sub>Em texto: **6** projetos públicos · **51** commits nos repositórios públicos · **15** contribuições em **3** dias nos últimos 12 meses · conta criada em dez/2024. Linguagens (nº de repositórios): CSS (4) · HTML (4) · JavaScript (4) · Python (3) · PowerShell (2). Gerado pela API do GitHub em 13 nov 2026.</sub>
 <!-- stats:end -->
 
 <sub>Atualizado toda semana por uma GitHub Action com [`brand/stats.py`](brand/stats.py), sem serviço externo. O calendário de contribuições é o do próprio GitHub, logo abaixo deste README.</sub>

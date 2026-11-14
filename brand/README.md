@@ -36,7 +36,7 @@ No tema claro do portfólio, o petróleo de texto é escurecido para `#1F6F80` (
 powershell -NoProfile -File .\brand\render.ps1
 ```
 
-O script abre [`_source/render.html`](_source/render.html) no Microsoft Edge em modo headless, uma vez por peça, e grava `assets/banner.png` (1280×360) e `assets/covers/<repositório>.png` (1280×640, tamanho recomendado pelo GitHub para *social preview*), todos em resolução 2×. Se o Python com Pillow estiver instalado, os PNG são otimizados (cerca de 50 KB cada).
+O script abre [`_source/render.html`](_source/render.html) no Microsoft Edge em modo headless, uma vez por peça, e grava `assets/banner.png` (1280×300) e `assets/banner-mobile.png` (720×400, servido no celular) e `assets/covers/<repositório>.png` (1280×640, tamanho recomendado pelo GitHub para *social preview*), todos em resolução 2×. Se o Python com Pillow estiver instalado, os PNG são otimizados (cerca de 50 KB cada).
 
 Para mudar textos ou diagramas, edite o objeto `DATA` no HTML.
 
@@ -46,7 +46,7 @@ Para mudar textos ou diagramas, edite o objeto `DATA` no HTML.
 py brand\components.py   # assets/ui, assets/stack e assets/certs
 ```
 
-Cartão `whoami`, botões de contato, legenda e divisores do Tech Stack, um bloco por tecnologia, cartões de certificação e linha do tempo. Tudo em SVG, gerado a partir do objeto `DATA` no script; nada é desenhado à mão nem carregado de serviço externo.
+Painel do topo em estilo terminal (`perfil.svg` 2 x 2 e `perfil-mobile.svg` empilhado, servido por `<picture>` abaixo de 600 px), botões de contato de largura igual, legenda e divisores do Tech Stack, um bloco por tecnologia, cartões de certificação e linha do tempo. Tudo em SVG, gerado a partir do objeto `DATA` no script; nada é desenhado à mão nem carregado de serviço externo.
 
 - **Níveis no Tech Stack** (ponto no canto do bloco): verde = uso profissional, ciano = projetos próprios, cinza = fundamentos (curso concluído), âmbar tracejado = em estudo. Mesmo critério do portfólio.
 - **Logotipos** oficiais em [`_source/icons/`](_source/icons/) (Devicon e Simple Icons, ver `LICENSES.md`). Tecnologias sem logotipo próprio (AD, GPO, DNS, DHCP, TCP/IP) usam monograma, nunca um logotipo inventado.

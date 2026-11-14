@@ -10,7 +10,8 @@ $out  = Join-Path $root 'assets'
 New-Item -ItemType Directory -Force "$out\covers" | Out-Null
 
 $jobs = @(
-  @{ id='banner'; size='1280,360'; file="$out\banner.png" }
+  @{ id='banner'; size='1280,300'; file="$out\banner.png" },
+  @{ id='banner-mobile'; size='720,400'; file="$out\banner-mobile.png" }
 ) + (@('lab-active-directory','kaizen-tech','campus-ai','fleet-report-demo','inclusao-360','portfolio') | ForEach-Object {
   @{ id=$_; size='1280,640'; file="$out\covers\$_.png" }
 })
@@ -33,7 +34,7 @@ try:
     from PIL import Image
 except ImportError:
     raise SystemExit('Pillow ausente: PNG mantidos sem otimização')
-for f in glob.glob(r'$out\banner.png') + glob.glob(r'$out\covers\*.png'):
+for f in glob.glob(r'$out\banner*.png') + glob.glob(r'$out\covers\*.png'):
     im = Image.open(f).convert('RGBA')
     im.quantize(colors=256, method=Image.Quantize.FASTOCTREE, dither=Image.Dither.NONE).save(f, optimize=True)
     print(f'{os.path.getsize(f)//1024:>4} KB  {f}')

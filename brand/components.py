@@ -1,7 +1,7 @@
 """Gera os componentes visuais do README de perfil (SVG, sem serviço externo).
 
 Saídas:
-  assets/ui/whoami.svg            cartão de apresentação em estilo terminal
+  assets/ui/perfil(-mobile).svg   painel do topo em estilo terminal (desktop 2 x 2 / celular empilhado)
   assets/ui/btn-*.svg             botões de contato
   assets/ui/legend.svg            legenda dos níveis do Tech Stack
   assets/ui/div-*.svg             divisores das categorias do Tech Stack
@@ -58,19 +58,20 @@ RECOLOR = {
 }
 
 DATA = {
-    "whoami": [
-        ("whoami", "Pedro Henrique da Silva Pereira"),
-        ("cargo", "Jovem Aprendiz · equipe de TI · desde abr/2026"),
-        ("formacao", "Sistemas de Informação · 4º período · AEDB"),
-        ("foco", "Windows Server · AD · GPO · DNS · DHCP · redes"),
-        ("automacao", "Python e PowerShell para problemas que se repetem"),
-        ("status", None),
+    # Painel do topo. Sem repetir o banner (nome, cargo-título, status).
+    # (comando, valor, detalhe, nível do ponto ou None). Níveis iguais aos do Tech Stack.
+    "perfil": [
+        ("atuacao", "Jovem Aprendiz · equipe de TI", "Transmargoo · desde abr/2026", None),
+        ("formacao", "Sistemas de Informação", "4º período · Faculdade Dom Bosco (AEDB)", None),
+        ("foco", "Windows Server · AD · GPO · DNS · DHCP", "suporte N1, hardware e redes", "prof"),
+        ("automacao", "Python · projetos próprios", "PowerShell · em estudo", "proj"),
     ],
+    # Ordem pedida: LinkedIn, Portfólio, Currículo, E-mail.
     "buttons": [
-        ("linkedin", "LinkedIn", "linkedin"),
+        ("linkedin", "LinkedIn", "logo:linkedin"),
         ("portfolio", "Portfólio", "globe"),
+        ("curriculo", "Currículo", "file"),
         ("email", "E-mail", "mail"),
-        ("curriculo", "Currículo PDF", "file"),
     ],
     # (id, rótulo, ícone: arquivo | glyph:nome | mono:texto, nível)
     "stack": {
@@ -184,53 +185,84 @@ def write(rel: str, content: str) -> None:
 
 
 # ---------------------------------------------------------------- componentes
-def whoami() -> str:
-    w, lh, top = 840, 34, 74
-    rows = DATA["whoami"]
-    h = top + lh * len(rows) + 22
-    out = [frame(w, h),
-           f'<rect x="6" y="0" width="{w - 6}" height="42" fill="{SURFACE}" clip-path="url(#c)"/>',
-           f'<path d="M6 42.5H{w}" stroke="{EDGE}"/>']
+def _dot(x, y, level, r=5):
+    _, color = LEVELS[level]
+    if level == "estudo":
+        return f'<circle cx="{x}" cy="{y}" r="{r}" fill="none" stroke="{color}" stroke-width="1.8" stroke-dasharray="2.4 1.8"/>'
+    return f'<circle cx="{x}" cy="{y}" r="{r}" fill="{color}"/>'
+
+
+def perfil(mobile: bool = False) -> str:
+    """Painel do topo em estilo terminal: 2 x 2 no desktop, empilhado no celular.
+
+    Mesma largura de referência do banner (1280 / 720), mesmo raio e mesma barra petróleo,
+    para que banner e painel formem um bloco só no README.
+    """
+    rows = DATA["perfil"]
+    w = 720 if mobile else 1280
+    pad, gap, head = (34, 12, 50) if mobile else (40, 16, 48)
+    cols = 1 if mobile else 2
+    ch = 108 if mobile else 90
+    key_s, val_s, sub_s = (20, 25, 20) if mobile else (16, 22, 16)
+    n_rows = -(-len(rows) // cols)
+    h = head + 20 + n_rows * ch + (n_rows - 1) * gap + 22
+    cw = (w - 10 - 2 * pad - (cols - 1) * gap) / cols
+    out = [f'<defs><clipPath id="c"><rect width="{w}" height="{h}" rx="20"/></clipPath></defs>',
+           f'<g clip-path="url(#c)"><rect width="{w}" height="{h}" fill="{BG}"/>',
+           f'<rect width="{w}" height="{head}" fill="{SURFACE}"/><rect width="10" height="{h}" fill="{PETROL}"/></g>',
+           f'<path d="M10 {head}.5H{w}" stroke="{EDGE}"/>',
+           f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="20" fill="none" stroke="{EDGE}"/>']
     for i, c in enumerate([BORDER, BORDER, PETROL]):
-        out.append(f'<circle cx="{30 + i * 18}" cy="21" r="5" fill="{c}"/>')
-    out.append(mono_text(w / 2, 26, "pedro@infra: ~", 13, MUTED, "middle")[0])
+        out.append(f'<circle cx="{36 + i * 18}" cy="{head / 2}" r="5" fill="{c}"/>')
+    out.append(mono_text(100, head / 2 + 5, "pedro@infra:~$ cat perfil", 16 if not mobile else 18, MUTED)[0])
     alt = []
-    for i, (cmd, val) in enumerate(rows):
-        y = top + i * lh + 12
-        out.append(mono_text(34, y, "$", 16, PETROL, fit=False)[0])
-        out.append(mono_text(56, y, cmd, 16, CYAN)[0])
-        if val is None:
-            out.append(f'<circle cx="214" cy="{y - 5}" r="5" fill="{OK}"/>')
-            t, tw = mono_text(228, y, "aberto a oportunidades", 16, OK, weight=600)
-            out.append(t)
-            out.append(f'<rect class="cur" x="{236 + tw:.0f}" y="{y - 15}" width="9" height="19" fill="{CYAN}"/>')
-            alt.append("status: aberto a oportunidades")
+    for i, (cmd, val, sub, level) in enumerate(rows):
+        r, c = divmod(i, cols)
+        x = 10 + pad + c * (cw + gap)
+        y = head + 20 + r * (ch + gap)
+        out.append(f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="{ch}" rx="12" fill="{SURFACE}" fill-opacity=".55" stroke="{BORDER}"/>')
+        ix = x + 20
+        ky = y + (30 if mobile else 25)
+        out.append(mono_text(ix, ky, "$", key_s, PETROL, fit=False)[0])
+        out.append(mono_text(ix + key_s * 1.2, ky, cmd, key_s, CYAN)[0])
+        vy = ky + (val_s + 12 if mobile else val_s + 6)
+        sy = vy + (sub_s + 10 if mobile else sub_s + 6)
+        if cmd == "automacao":
+            out.append(_dot(ix + 6, vy - val_s * 0.36, "proj"))
+            out.append(mono_text(ix + 20, vy, val, val_s, TEXT)[0])
+            out.append(_dot(ix + 6, sy - sub_s * 0.36, "estudo", 4.5))
+            out.append(mono_text(ix + 20, sy, sub, sub_s, MUTED)[0])
+        elif level:
+            out.append(_dot(ix + 6, vy - val_s * 0.36, level))
+            out.append(mono_text(ix + 20, vy, val, val_s, TEXT)[0])
+            out.append(mono_text(ix + 20, sy, sub, sub_s, MUTED)[0])
         else:
-            out.append(mono_text(200, y, val, 16, TEXT)[0])
-            alt.append(f"{cmd}: {val}")
-    style = ('<style>@keyframes b{50%{opacity:0}}.cur{animation:b 1.1s steps(1) infinite}'
-             '@media (prefers-reduced-motion:reduce){.cur{animation:none}}</style>\n')
-    return svg(w, h, "; ".join(alt), "\n".join(out), style)
+            out.append(mono_text(ix, vy, val, val_s, TEXT)[0])
+            out.append(mono_text(ix, sy, sub, sub_s, MUTED)[0])
+        alt.append(f"{cmd}: {val} ({sub})")
+    label = "Perfil. " + "; ".join(alt).replace("atuacao", "atuação").replace("formacao", "formação").replace("automacao", "automação")
+    return svg(w, h, label, "\n".join(out))
 
 
 def button(key: str, label: str, glyph: str) -> str:
+    """Botões de largura igual: 4 alinhados no desktop, 2 por linha no celular (área útil medida no GitHub a 390 px: 293 px)."""
     text = label.upper()
-    h, size, sp = 40, 13, 1.2
+    w, h, size, sp = 142, 42, 13, 1.2
     tw = len(text) * size * MONO_W + (len(text) - 1) * sp
-    w = round(16 + 18 + 10 + tw + 18)
+    gx = (w - (18 + 10 + tw)) / 2          # grupo ícone + texto centralizado
+    iy = (h - 18) / 2
     if key == "linkedin":
         fill, stroke, fg = "#0A66C2", "#0A66C2", "#FFFFFF"
-        ic = (f'<rect x="16" y="11" width="18" height="18" rx="3" fill="#FFFFFF"/>'
-              f'<text x="25" y="25.5" text-anchor="middle" font-family="{SANS}" font-size="13" font-weight="700" fill="#0A66C2">in</text>')
+        ic = icon(glyph[5:], gx, iy, 18).replace("<path ", '<path fill="#FFFFFF" ', 1)
     elif key == "portfolio":
         fill, stroke, fg = PETROL_DARK, PETROL_DARK, "#FFFFFF"
-        ic = icon("glyph:" + glyph, 16, 11, 18).replace(f'stroke="{CYAN}"', 'stroke="#FFFFFF"')
+        ic = icon("glyph:" + glyph, gx, iy, 18).replace(f'stroke="{CYAN}"', 'stroke="#FFFFFF"')
     else:
         fill, stroke, fg = SURFACE, BORDER, TEXT
-        ic = icon("glyph:" + glyph, 16, 11, 18)
-    t = (f'<text x="44" y="25" font-family="{MONO}" font-size="{size}" font-weight="600" letter-spacing="{sp}" fill="{fg}" '
-         f'textLength="{tw:.1f}" lengthAdjust="spacingAndGlyphs">{escape(text)}</text>')
-    body = f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="8" fill="{fill}" stroke="{stroke}"/>{ic}{t}'
+        ic = icon("glyph:" + glyph, gx, iy, 18)
+    t = (f'<text x="{gx + 28:.1f}" y="{h / 2 + 4.6:.1f}" font-family="{MONO}" font-size="{size}" font-weight="600" '
+         f'letter-spacing="{sp}" fill="{fg}" textLength="{tw:.1f}" lengthAdjust="spacingAndGlyphs">{escape(text)}</text>')
+    body = f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="9" fill="{fill}" stroke="{stroke}"/>{ic}{t}'
     return svg(w, h, label, body)
 
 
@@ -323,7 +355,8 @@ def timeline() -> str:
 
 
 def main() -> None:
-    write("ui/whoami.svg", whoami())
+    write("ui/perfil.svg", perfil())
+    write("ui/perfil-mobile.svg", perfil(mobile=True))
     for key, label, glyph in DATA["buttons"]:
         write(f"ui/btn-{key}.svg", button(key, label, glyph))
     write("ui/legend.svg", legend())
