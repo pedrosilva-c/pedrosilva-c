@@ -36,6 +36,15 @@ No tema claro do portfólio, o petróleo de texto é escurecido para `#1F6F80` (
 powershell -NoProfile -File .\brand\render.ps1
 ```
 
-O script abre [`_source/render.html`](_source/render.html) no Microsoft Edge em modo headless, uma vez por peça, e grava `assets/banner.png` (1280×320) e `assets/covers/<repositório>.png` (1280×640, tamanho recomendado pelo GitHub para *social preview*), todos em resolução 2×. Se o Python com Pillow estiver instalado, os PNG são otimizados (cerca de 50 KB cada).
+O script abre [`_source/render.html`](_source/render.html) no Microsoft Edge em modo headless, uma vez por peça, e grava `assets/banner.png` (1280×360) e `assets/covers/<repositório>.png` (1280×640, tamanho recomendado pelo GitHub para *social preview*), todos em resolução 2×. Se o Python com Pillow estiver instalado, os PNG são otimizados (cerca de 50 KB cada).
 
 Para mudar textos ou diagramas, edite o objeto `DATA` no HTML.
+
+## Estatísticas e selos
+
+```powershell
+py brand\stats.py    # assets/stats.svg, assets/contributions.svg e o bloco <!-- stats --> do README
+py brand\status.py   # assets/status/*.svg (selos da grade de projetos)
+```
+
+`stats.py` usa só a biblioteca padrão e a API do GitHub (token de `GITHUB_TOKEN` ou de `gh auth token`). Os números vêm da API: projetos públicos (sem o repositório de perfil), commits nos repositórios públicos, contribuições dos últimos 12 meses e linguagens contadas por repositório, sem porcentagens. A Action [`stats.yml`](../.github/workflows/stats.yml) roda toda segunda-feira e só faz commit quando algo mudou. Os mesmos números ficam em texto no README, para quem não carrega imagens.

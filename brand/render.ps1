@@ -10,7 +10,7 @@ $out  = Join-Path $root 'assets'
 New-Item -ItemType Directory -Force "$out\covers" | Out-Null
 
 $jobs = @(
-  @{ id='banner'; size='1280,320'; file="$out\banner.png" }
+  @{ id='banner'; size='1280,360'; file="$out\banner.png" }
 ) + (@('lab-active-directory','kaizen-tech','campus-ai','fleet-report-demo','inclusao-360','portfolio') | ForEach-Object {
   @{ id=$_; size='1280,640'; file="$out\covers\$_.png" }
 })

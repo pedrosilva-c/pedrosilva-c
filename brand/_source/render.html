@@ -53,7 +53,7 @@
 <body>
 <div class="card" id="card"><div class="bar"></div></div>
 <script>
-const W = {banner:[1280,320], cover:[1280,640]};
+const W = {banner:[1280,360], cover:[1280,640]};
 
 // n(x,y,w,h,título,subtítulo,classe)   e([[x,y],...],classe)
 const n = (x,y,w,h,t,s,c="",ts=19,ss=13) => ({k:"n",x,y,w,h,t,s,c,ts,ss});
@@ -62,12 +62,13 @@ const lbl = (x,y,t,c="lbl",anchor="start") => ({k:"l",x,y,t,c,anchor});
 
 const DATA = {
   banner: {
-    size:"banner",
-    eyebrow:"Sistemas de Informação · Resende, RJ",
+    eyebrow:"Sistemas de Informação · AEDB · Resende, RJ",
     title:"Pedro Henrique da Silva Pereira",
-    role:"Suporte e Infraestrutura de TI | Automação e Sistemas",
-    focus:"Windows Server · Active Directory · GPO · Redes · Python · PowerShell",
-    box:[840,44,400,236],
+    role:"Suporte e Infraestrutura de TI",
+    role2:"Automação e Sistemas",
+    focus:["Windows Server","Active Directory","GPO","DNS · DHCP","Hardware e redes"],
+    status:"Aberto a oportunidades",
+    box:[828,58,400,244],
     dg:[
       e([[90,30],[150,30]]), e([[250,30],[310,30]]),
       e([[200,50],[200,118]]),
@@ -213,12 +214,13 @@ const card = document.getElementById("card");
 const txt = document.createElement("div"); txt.className = "txt";
 
 if (id === "banner"){
-  Object.assign(txt.style,{left:"64px",top:"0",bottom:"0",width:"760px",justifyContent:"center",gap:"0"});
+  Object.assign(txt.style,{left:"64px",top:"0",bottom:"0",width:"740px",justifyContent:"center",gap:"0"});
   txt.innerHTML = `
-    <div class="eyebrow" style="font-size:17px;margin-bottom:22px">${d.eyebrow}</div>
-    <h1 style="font-size:50px;margin-bottom:14px">${d.title}</h1>
-    <div class="role" style="font-size:25px;margin-bottom:26px">${d.role}</div>
-    <div class="eyebrow" style="font-size:16px">${d.focus}</div>`;
+    <div class="eyebrow" style="font-size:16px;margin-bottom:18px">${d.eyebrow}</div>
+    <h1 style="font-size:48px;margin-bottom:12px">${d.title}</h1>
+    <div class="role" style="font-size:25px;margin-bottom:22px">${d.role} <span style="color:var(--border)">|</span> <span style="color:var(--soft);font-weight:500">${d.role2}</span></div>
+    <div class="chips" style="margin-bottom:24px">${d.focus.map(c=>`<span class="chip" style="font-size:15px;padding:5px 11px">${c}</span>`).join("")}</div>
+    <span class="pill ok" style="font-size:13px">${d.status}</span>`;
   card.appendChild(txt);
   drawDiagram(d.dg, d.box, card);
 } else {
