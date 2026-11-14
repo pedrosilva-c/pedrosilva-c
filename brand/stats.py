@@ -98,30 +98,47 @@ def card(w: int, h: int, title: str, body: str) -> str:
 """
 
 
+def mono(x, y, text, size, fill, anchor="start", weight=400):
+    """Texto monoespaçado com largura fixa (textLength): igual em qualquer fonte de fallback."""
+    tl = len(text) * size * 0.6
+    return (f'<text x="{x:g}" y="{y:g}" font-family="{MONO}" font-size="{size}" font-weight="{weight}" fill="{fill}" '
+            f'text-anchor="{anchor}" textLength="{tl:.1f}" lengthAdjust="spacingAndGlyphs">{escape(text)}</text>')
+
+
 def stats_svg(s: dict) -> str:
-    w, h = 1280, 300
+    w, h = 840, 268
     cells = [
-        (str(s["projects"]), "projetos públicos"),
-        (str(s["commits"]), "commits nos repositórios"),
-        (str(s["contributions"]), "contribuições em 12 meses"),
-        (month_label(s["since"]), "conta criada em"),
+        (str(s["projects"]), "projetos públicos", "sem o repo de perfil"),
+        (str(s["commits"]), "commits", "repositórios públicos"),
+        (str(s["contributions"]), "contribuições", f"12 meses · {s['active_days']} dias ativos"),
+        (month_label(s["since"]), "na conta desde", f"github.com/{LOGIN}"),
     ]
-    out = [f'<text x="56" y="62" font-family="{MONO}" font-size="16" fill="{MUTED}">github.com/{LOGIN} · <tspan fill="{CYAN}">estatísticas</tspan></text>']
-    cw = (w - 112) / 4
-    for i, (num, lab) in enumerate(cells):
-        x = 56 + i * cw
-        out.append(f'<rect x="{x:.0f}" y="88" width="{cw - 16:.0f}" height="104" rx="10" fill="{SURFACE}" stroke="{BORDER}"/>')
-        out.append(f'<text x="{x + 24:.0f}" y="140" font-family="{SANS}" font-size="38" font-weight="700" fill="{TEXT}">{escape(num)}</text>')
-        out.append(f'<text x="{x + 24:.0f}" y="172" font-family="{MONO}" font-size="14" fill="{MUTED}">{escape(lab)}</text>')
-    out.append(f'<text x="56" y="236" font-family="{MONO}" font-size="14" fill="{MUTED}">linguagens · nº de repositórios em que aparecem</text>')
-    x = 56
-    for name, n in s["languages"][:5]:
-        label = f"{name}  {n}"
-        bw = 26 + len(label) * 9.2
-        out.append(f'<rect x="{x:.0f}" y="252" width="{bw:.0f}" height="30" rx="7" fill="{SURFACE}" stroke="{BORDER}"/>')
-        out.append(f'<text x="{x + 13:.0f}" y="272" font-family="{MONO}" font-size="15" fill="#C6D0DA">{escape(name)}<tspan fill="{CYAN}">  {n}</tspan></text>')
-        x += bw + 10
-    out.append(f'<text x="{w - 56}" y="272" text-anchor="end" font-family="{MONO}" font-size="13" fill="#5E6B78">API do GitHub · {date_label(s["today"])}</text>')
+    out = [f'<rect x="8" y="0" width="{w - 8}" height="42" fill="{SURFACE}" clip-path="url(#c)"/>',
+           f'<path d="M8 42.5H{w}" stroke="#222C36"/>',
+           mono(32, 26, "github analytics", 13, CYAN, weight=600),
+           mono(w - 24, 26, f"API do GitHub · {date_label(s['today'])}", 12, "#5E6B78", "end")]
+    cw = (w - 8) / 4
+    for i, (num, lab, sub) in enumerate(cells):
+        cx = 8 + cw * i + cw / 2
+        if i:
+            out.append(f'<path d="M{8 + cw * i:.1f} 66V170" stroke="{BORDER}"/>')
+        size = 38 if len(num) <= 4 else 28
+        out.append(f'<text x="{cx:.1f}" y="{112 if size == 38 else 108}" text-anchor="middle" font-family="{SANS}" '
+                   f'font-size="{size}" font-weight="700" fill="{CYAN}">{escape(num)}</text>')
+        out.append(f'<text x="{cx:.1f}" y="140" text-anchor="middle" font-family="{SANS}" font-size="14" font-weight="600" fill="{TEXT}">{escape(lab)}</text>')
+        out.append(mono(cx, 160, sub, 10.5, MUTED, "middle"))
+    out.append(f'<path d="M32 192.5H{w - 24}" stroke="#222C36"/>')
+    chips = [(name, n, len(f"{name} {n}") * 12 * 0.6 + 24) for name, n in s["languages"][:5]]
+    label_w = len("linguagens · repos") * 11 * 0.6
+    total = label_w + 18 + sum(c[2] for c in chips) + 8 * (len(chips) - 1)
+    x = (w + 8 - total) / 2
+    out.append(mono(x, 233, "linguagens · repos", 11, MUTED))
+    x += label_w + 18
+    for name, n, cw_ in chips:
+        out.append(f'<rect x="{x:.1f}" y="214.5" width="{cw_:.1f}" height="26" rx="7" fill="{SURFACE}" stroke="{BORDER}"/>')
+        out.append(mono(x + 12, 232, name, 12, "#C6D0DA"))
+        out.append(mono(x + 12 + (len(name) + 1) * 12 * 0.6, 232, str(n), 12, CYAN, weight=600))
+        x += cw_ + 8
     title = (f"Estatísticas de {LOGIN}: {s['projects']} projetos públicos, {s['commits']} commits, "
              f"{s['contributions']} contribuições em 12 meses")
     return card(w, h, title, "\n".join(out))

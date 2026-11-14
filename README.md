@@ -1,44 +1,67 @@
-<img src="assets/banner.png" alt="Pedro Henrique da Silva Pereira — Suporte e Infraestrutura de TI | Automação e Sistemas. Windows Server, Active Directory, GPO, DNS e DHCP, hardware e redes." width="100%">
+<img src="assets/banner.png" alt="Pedro Henrique da Silva Pereira — Suporte e Infraestrutura de TI | Automação e Sistemas. Windows Server, Active Directory, GPO, DNS e DHCP, hardware e redes. Aberto a oportunidades." width="100%">
 
-### Suporte e Infraestrutura de TI · Automação e Sistemas
+<p align="center">
+<img src="assets/ui/whoami.svg" alt="whoami: Pedro Henrique da Silva Pereira. Cargo: Jovem Aprendiz na equipe de TI desde abr/2026. Formação: Sistemas de Informação, 4º período, AEDB. Foco: Windows Server, Active Directory, GPO, DNS, DHCP e redes. Automação: Python e PowerShell para problemas que se repetem. Status: aberto a oportunidades." width="100%">
+</p>
 
-Trabalho no **suporte e na infraestrutura de TI** de uma empresa de transporte e curso **Sistemas de Informação** (4º período) na Faculdade Dom Bosco (AEDB). Atendo usuários, mantenho estações Windows e participo da gestão do Active Directory, das GPOs e da rede.
+<details>
+<summary><b>Sobre mim</b></summary>
+<br>
 
-## Sobre mim
-
-Comecei no suporte dos laboratórios de informática da faculdade: formatação, drivers, periféricos, cabeamento e atendimento a alunos e professores. Hoje, na equipe de TI de uma empresa, cuido do dia a dia das estações e dos usuários. Já retomei um servidor Windows Server após uma queda de energia, corrigi um conflito de IP entre roteador e gateway e isolei o Wi-Fi de visitantes da rede interna.
+Comecei no suporte dos laboratórios de informática da faculdade: formatação, drivers, periféricos, cabeamento e atendimento a alunos e professores. Hoje, na equipe de TI de uma empresa de transporte, cuido do dia a dia das estações e dos usuários. Já retomei um servidor Windows Server após uma queda de energia, corrigi um conflito de IP entre roteador e gateway e isolei o Wi-Fi de visitantes da rede interna.
 
 Quando um problema se repete, escrevo uma ferramenta em Python ou PowerShell para resolvê-lo. Cada projeto aqui documenta o problema, os testes e as limitações, e o status é sempre declarado: o que está em andamento aparece como **WIP** ou **em documentação**, nunca como concluído.
 
-## Conecte-se comigo
+</details>
 
-| Canal | Endereço |
-|---|---|
-| **Portfólio** | [pedro-osaka.github.io/portfolio](https://pedro-osaka.github.io/portfolio/) |
-| **LinkedIn** | [in/pedrosilva-sistemas](https://www.linkedin.com/in/pedrosilva-sistemas/) |
-| **E-mail** | [contatopedromarketinglab@gmail.com](mailto:contatopedromarketinglab@gmail.com) |
-| **Currículo** | [PDF, 1 página](https://pedro-osaka.github.io/portfolio/assets/curriculo-pedro-henrique.pdf) |
+## Connect with me
 
-## Tecnologias e competências
+<p align="center">
+<a href="https://www.linkedin.com/in/pedrosilva-sistemas/"><img src="assets/ui/btn-linkedin.svg" alt="LinkedIn" height="40"></a>&nbsp;
+<a href="https://pedro-osaka.github.io/portfolio/"><img src="assets/ui/btn-portfolio.svg" alt="Portfólio" height="40"></a>&nbsp;
+<a href="mailto:contatopedromarketinglab@gmail.com"><img src="assets/ui/btn-email.svg" alt="E-mail: contatopedromarketinglab@gmail.com" height="40"></a>&nbsp;
+<a href="https://pedro-osaka.github.io/portfolio/assets/curriculo-pedro-henrique.pdf"><img src="assets/ui/btn-curriculo.svg" alt="Currículo em PDF" height="40"></a>
+</p>
 
-| Área e nível | Competências |
-|---|---|
-| **Suporte técnico**<br><sub>uso profissional</sub> | Atendimento N1 a usuários · Windows 10/11 · instalação de sistema, drivers, impressoras e periféricos · manutenção e diagnóstico de hardware |
-| **Infraestrutura Windows**<br><sub>uso profissional</sub> | Windows Server · Active Directory (usuários, acessos e permissões) · GPO (padronização de estações e mapeamento de unidades) · [laboratório próprio](https://github.com/Pedro-Osaka/lab-active-directory) em VirtualBox |
-| **Redes**<br><sub>uso profissional</sub> | TCP/IP · DNS · DHCP · diagnóstico de conflito de IP · Wi-Fi de visitantes isolado · cabeamento e crimpagem |
-| **Cloud**<br><sub>fundamentos · em estudo</sub> | AWS: Cloud Foundations (curso concluído) · Microsoft Azure: fundamentos (em estudo, sem projeto publicado) |
-| **Cibersegurança**<br><sub>fundamentos</sub> | Introduction to Cybersecurity (Cisco, curso concluído): ameaças, proteção de dispositivos e redes |
-| **Automação e sistemas**<br><sub>projetos próprios</sub> | Python (Tkinter, PySide6, Playwright) · FastAPI · SQLite · JavaScript e TypeScript · testes com pytest e unittest · Git e GitHub |
-| **Scripts**<br><sub>em estudo</sub> | PowerShell: inventário de estação, coleta de evidências do laboratório e comandos do Kaizen Tech |
+## Tech Stack
 
-<sub>Os níveis seguem o mesmo critério do portfólio: **uso profissional** (no trabalho), **projetos próprios**, **fundamentos** (curso concluído) e **em estudo**. Sem barras de porcentagem.</sub>
+<p align="center">
+<img src="assets/ui/legend.svg" alt="Legenda: verde, uso profissional; ciano, projetos próprios; cinza, fundamentos (curso concluído); âmbar tracejado, em estudo.">
+</p>
 
-## Estatísticas do GitHub
+<p align="center">
+<img src="assets/ui/div-infra.svg" alt="Suporte e infraestrutura Windows">
+<br>
+<img src="assets/stack/windows.svg" alt="Windows 10/11 — uso profissional" title="Windows 10/11 — uso profissional" width="70">&nbsp;<img src="assets/stack/windows-server.svg" alt="Windows Server — uso profissional" title="Windows Server — uso profissional" width="70">&nbsp;<img src="assets/stack/active-directory.svg" alt="Active Directory — uso profissional" title="Active Directory — uso profissional" width="70">&nbsp;<img src="assets/stack/gpo.svg" alt="GPO — uso profissional" title="GPO — uso profissional" width="70">&nbsp;<img src="assets/stack/hardware.svg" alt="Hardware — uso profissional" title="Hardware — uso profissional" width="70">&nbsp;<img src="assets/stack/suporte.svg" alt="Suporte N1 — uso profissional" title="Suporte N1 — uso profissional" width="70">
+<br><br>
+<img src="assets/ui/div-redes.svg" alt="Redes">
+<br>
+<img src="assets/stack/tcpip.svg" alt="TCP/IP — uso profissional" title="TCP/IP — uso profissional" width="70">&nbsp;<img src="assets/stack/dns.svg" alt="DNS — uso profissional" title="DNS — uso profissional" width="70">&nbsp;<img src="assets/stack/dhcp.svg" alt="DHCP — uso profissional" title="DHCP — uso profissional" width="70">&nbsp;<img src="assets/stack/wifi.svg" alt="Wi-Fi — uso profissional" title="Wi-Fi — uso profissional" width="70">&nbsp;<img src="assets/stack/cabeamento.svg" alt="Cabeamento e crimpagem — uso profissional" title="Cabeamento e crimpagem — uso profissional" width="70">
+<br><br>
+<img src="assets/ui/div-cloud.svg" alt="Cloud e segurança">
+<br>
+<img src="assets/stack/aws.svg" alt="AWS — fundamentos (curso concluído)" title="AWS — fundamentos (curso concluído)" width="70">&nbsp;<img src="assets/stack/ciberseguranca.svg" alt="Cibersegurança — fundamentos (curso Cisco concluído)" title="Cibersegurança — fundamentos (curso Cisco concluído)" width="70">&nbsp;<img src="assets/stack/azure.svg" alt="Microsoft Azure — em estudo" title="Microsoft Azure — em estudo" width="70">
+<br><br>
+<img src="assets/ui/div-dev.svg" alt="Automação e sistemas">
+<br>
+<img src="assets/stack/python.svg" alt="Python — projetos próprios" title="Python — projetos próprios" width="70">&nbsp;<img src="assets/stack/powershell.svg" alt="PowerShell — em estudo" title="PowerShell — em estudo" width="70">&nbsp;<img src="assets/stack/fastapi.svg" alt="FastAPI — projetos próprios" title="FastAPI — projetos próprios" width="70">&nbsp;<img src="assets/stack/sqlite.svg" alt="SQLite — projetos próprios" title="SQLite — projetos próprios" width="70">&nbsp;<img src="assets/stack/javascript.svg" alt="JavaScript — projetos próprios" title="JavaScript — projetos próprios" width="70">&nbsp;<img src="assets/stack/typescript.svg" alt="TypeScript — projetos próprios" title="TypeScript — projetos próprios" width="70">&nbsp;<img src="assets/stack/html5.svg" alt="HTML — projetos próprios" title="HTML — projetos próprios" width="70">&nbsp;<img src="assets/stack/css3.svg" alt="CSS — projetos próprios" title="CSS — projetos próprios" width="70">&nbsp;<img src="assets/stack/pyside6.svg" alt="PySide6 (Qt) — projetos próprios" title="PySide6 (Qt) — projetos próprios" width="70">&nbsp;<img src="assets/stack/playwright.svg" alt="Playwright — projetos próprios" title="Playwright — projetos próprios" width="70">&nbsp;<img src="assets/stack/pytest.svg" alt="pytest — projetos próprios" title="pytest — projetos próprios" width="70">
+<br><br>
+<img src="assets/ui/div-tools.svg" alt="Ferramentas">
+<br>
+<img src="assets/stack/git.svg" alt="Git — projetos próprios" title="Git — projetos próprios" width="70">&nbsp;<img src="assets/stack/github.svg" alt="GitHub — projetos próprios" title="GitHub — projetos próprios" width="70">&nbsp;<img src="assets/stack/virtualbox.svg" alt="VirtualBox — projetos próprios" title="VirtualBox — projetos próprios" width="70">
+<br><br>
+</p>
 
-<img src="assets/stats.svg" alt="Estatísticas desta conta no GitHub. Os mesmos números estão em texto logo abaixo." width="100%">
+<sub>Uso profissional: no trabalho. Projetos próprios: nos repositórios abaixo. Fundamentos: curso concluído (AWS Academy, Cisco). Em estudo: sem uso comprovado ainda. Sem barras de porcentagem.</sub>
+
+## GitHub Analytics
+
+<p align="center">
+<img src="assets/stats.svg" alt="GitHub Analytics desta conta. Os mesmos números estão em texto logo abaixo." width="100%">
+</p>
 
 <!-- stats:start -->
-<sub>Em texto: **6** projetos públicos · **48** commits nos repositórios públicos · **15** contribuições em **3** dias nos últimos 12 meses · conta criada em dez/2024. Linguagens (nº de repositórios): CSS (4) · HTML (4) · JavaScript (4) · Python (3) · PowerShell (2). Gerado pela API do GitHub em 13 nov 2026.</sub>
+<sub>Em texto: **6** projetos públicos · **49** commits nos repositórios públicos · **15** contribuições em **3** dias nos últimos 12 meses · conta criada em dez/2024. Linguagens (nº de repositórios): CSS (4) · HTML (4) · JavaScript (4) · Python (3) · PowerShell (2). Gerado pela API do GitHub em 13 nov 2026.</sub>
 <!-- stats:end -->
 
 <sub>Atualizado toda semana por uma GitHub Action com [`brand/stats.py`](brand/stats.py), sem serviço externo. O calendário de contribuições é o do próprio GitHub, logo abaixo deste README.</sub>
@@ -94,17 +117,21 @@ Também participei do **[BarberFlow](https://pedro-osaka.github.io/portfolio/#pr
 
 ## Certificações
 
-| Certificação | Emissor | Data | Verificação |
-|---|---|---|---|
-| AWS Academy Graduate — Cloud Foundations | AWS Academy | nov/2026 | [Credly](https://www.credly.com/go/B36iQJ1m) |
-| Introduction to Cybersecurity | Cisco Networking Academy | abr/2026 | — |
-| Fundamentos de Redes | Cisco Networking Academy | pendente | pendente |
+<p align="center">
+<a href="https://www.credly.com/go/B36iQJ1m"><img src="assets/certs/aws-cloud-foundations.svg" alt="AWS Academy Graduate — Cloud Foundations · AWS Academy · nov/2026 · verificável no Credly" width="268"></a>&nbsp;
+<img src="assets/certs/cisco-cybersecurity.svg" alt="Introduction to Cybersecurity · Cisco Networking Academy · abr/2026 · sem link público" width="268">&nbsp;
+<img src="assets/certs/cisco-redes.svg" alt="Fundamentos de Redes · Cisco Networking Academy · dados pendentes" width="268">
+</p>
 
 <sub>Nome oficial, data e link de verificação de "Fundamentos de Redes" aguardam o comprovante da Cisco.</sub>
 
-## Formação e experiência
+## Experiência e formação
 
-**Sistemas de Informação** · Faculdade Dom Bosco (AEDB) · `4º período, em andamento`
+<img src="assets/ui/timeline.svg" alt="Experiência e formação: abr/2026 – atual, Jovem Aprendiz na equipe de TI, Transmargoo Turismo e Fretamento; fev/2025 – abr/2026, Estagiário de Suporte Técnico, Faculdade Dom Bosco (AEDB); em andamento, Sistemas de Informação, 4º período, Faculdade Dom Bosco (AEDB)." width="100%">
+
+<details>
+<summary><b>Atividades em detalhe</b></summary>
+<br>
 
 **Jovem Aprendiz, equipe de TI** · Transmargoo Turismo e Fretamento · `abr/2026 – atual`<br>
 Atendimento a usuários e manutenção de estações Windows, impressoras e conectividade. Participo da gestão de usuários e permissões no Active Directory e em GPOs. Retomei um servidor Windows Server após queda de energia, corrigi um conflito de IP e isolei o Wi-Fi de visitantes da rede interna.
@@ -112,6 +139,10 @@ Atendimento a usuários e manutenção de estações Windows, impressoras e cone
 **Estagiário de Suporte Técnico** · Faculdade Dom Bosco (AEDB) · `fev/2025 – abr/2026`<br>
 Atendimento N1 presencial; manutenção preventiva e corretiva nos laboratórios de informática; instalação de Windows, drivers e periféricos; cabeamento e crimpagem; participação na implantação de um laboratório.
 
+**Sistemas de Informação** · Faculdade Dom Bosco (AEDB) · `4º período, em andamento`
+
+</details>
+
 <br>
 
-<sub>Uso assistentes de IA (Claude Code, Codex) no desenvolvimento. As decisões, os testes e a revisão são meus. · Banner, capas e estatísticas gerados a partir de <a href="brand/">brand/</a>.</sub>
+<p align="center"><sub>Uso assistentes de IA (Claude Code, Codex) no desenvolvimento; as decisões, os testes e a revisão são meus. · Visual gerado a partir de <a href="brand/">brand/</a>, sem serviços externos.</sub></p>

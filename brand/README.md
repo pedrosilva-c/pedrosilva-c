@@ -40,6 +40,19 @@ O script abre [`_source/render.html`](_source/render.html) no Microsoft Edge em 
 
 Para mudar textos ou diagramas, edite o objeto `DATA` no HTML.
 
+## Componentes do README
+
+```powershell
+py brand\components.py   # assets/ui, assets/stack e assets/certs
+```
+
+Cartão `whoami`, botões de contato, legenda e divisores do Tech Stack, um bloco por tecnologia, cartões de certificação e linha do tempo. Tudo em SVG, gerado a partir do objeto `DATA` no script; nada é desenhado à mão nem carregado de serviço externo.
+
+- **Níveis no Tech Stack** (ponto no canto do bloco): verde = uso profissional, ciano = projetos próprios, cinza = fundamentos (curso concluído), âmbar tracejado = em estudo. Mesmo critério do portfólio.
+- **Logotipos** oficiais em [`_source/icons/`](_source/icons/) (Devicon e Simple Icons, ver `LICENSES.md`). Tecnologias sem logotipo próprio (AD, GPO, DNS, DHCP, TCP/IP) usam monograma, nunca um logotipo inventado.
+- **Texto** monoespaçado com `textLength`, para manter a largura com qualquer fonte de fallback.
+- Cada imagem tem `alt` com o conteúdo completo; o README traz o mesmo conteúdo em texto (blocos recolhíveis e estatísticas).
+
 ## Estatísticas e selos
 
 ```powershell

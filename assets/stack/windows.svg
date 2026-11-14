@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="78" height="90" viewBox="0 0 78 90" role="img" aria-label="Windows — uso profissional">
+<title>Windows — uso profissional</title>
+<rect x=".5" y=".5" width="77" height="89" rx="12" fill="#151C23" stroke="#2A3540"/>
+<circle cx="67" cy="11" r="4" fill="#6CC79A"/>
+<svg x="21.0" y="15" width="36" height="36" viewBox="0 0 128 128"><path fill="#0078d4" d="M67.328 67.331h60.669V128H67.328zm-67.325 0h60.669V128H.003zM67.328 0h60.669v60.669H67.328zM.003 0h60.669v60.669H.003z"/></svg>
+<text x="39" y="76" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="400" fill="#C6D0DA" text-anchor="middle">Windows</text>
+</svg>
