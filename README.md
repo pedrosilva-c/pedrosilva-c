@@ -1,17 +1,17 @@
 <div align="center">
 <picture>
-<source media="(max-width: 600px)" srcset="assets/banner-mobile.png">
-<img src="assets/banner.png" alt="Pedro Henrique da Silva Pereira. Suporte e Infraestrutura de TI | Automação e Sistemas. Resende, RJ · Sistemas de Informação. Aberto a oportunidades." width="100%">
+<source media="(max-width: 600px)" srcset="assets/hero/banner-mobile.png">
+<img src="assets/hero/banner.png" alt="Pedro Henrique da Silva Pereira. Suporte e Infraestrutura de TI | Automação e Sistemas. Resende, RJ · Sistemas de Informação. Aberto a oportunidades." width="100%">
 </picture>
 <br>
-<a href="https://www.linkedin.com/in/pedrosilva-sistemas/"><img src="assets/ui/btn-linkedin.svg" alt="LinkedIn" height="42"></a>
-<a href="https://pedro-osaka.github.io/portfolio/"><img src="assets/ui/btn-portfolio.svg" alt="Portfólio" height="42"></a>
-<a href="https://pedro-osaka.github.io/portfolio/assets/curriculo-pedro-henrique.pdf"><img src="assets/ui/btn-curriculo.svg" alt="Currículo em PDF" height="42"></a>
-<a href="mailto:contatopedromarketinglab@gmail.com"><img src="assets/ui/btn-email.svg" alt="E-mail: contatopedromarketinglab@gmail.com" height="42"></a>
+<a href="https://www.linkedin.com/in/pedrosilva-sistemas/"><img src="assets/hero/btn-linkedin.svg" alt="LinkedIn" height="42"></a>
+<a href="https://pedro-osaka.github.io/portfolio/"><img src="assets/hero/btn-portfolio.svg" alt="Portfólio" height="42"></a>
+<a href="https://pedro-osaka.github.io/portfolio/assets/curriculo-pedro-henrique.pdf"><img src="assets/hero/btn-curriculo.svg" alt="Currículo em PDF" height="42"></a>
+<a href="mailto:contatopedromarketinglab@gmail.com"><img src="assets/hero/btn-email.svg" alt="E-mail: contatopedromarketinglab@gmail.com" height="42"></a>
 <br>
 <picture>
-<source media="(max-width: 600px)" srcset="assets/ui/perfil-mobile.svg">
-<img src="assets/ui/perfil.svg" alt="Perfil. Atuação: Jovem Aprendiz na equipe de TI da Transmargoo, desde abr/2026. Formação: Sistemas de Informação, 4º período, Faculdade Dom Bosco (AEDB). Foco técnico (uso profissional): Windows Server, Active Directory, GPO, DNS e DHCP; suporte N1, hardware e redes. Automação e projetos: Python em projetos próprios; PowerShell em estudo." width="100%">
+<source media="(max-width: 600px)" srcset="assets/hero/perfil-mobile.svg">
+<img src="assets/hero/perfil.svg" alt="Perfil. Atuação: Jovem Aprendiz na equipe de TI da Transmargoo, desde abr/2026. Formação: Sistemas de Informação, 4º período, Faculdade Dom Bosco (AEDB). Foco técnico (uso profissional): Windows Server, Active Directory, GPO, DNS e DHCP; suporte N1, hardware e redes. Automação e projetos: Python em projetos próprios; PowerShell em estudo." width="100%">
 </picture>
 </div>
 
@@ -63,7 +63,7 @@ Quando um problema se repete, escrevo uma ferramenta em Python para resolvê-lo;
 </p>
 
 <!-- stats:start -->
-<sub>Em texto: **6** projetos públicos · **51** commits nos repositórios públicos · **15** contribuições em **3** dias nos últimos 12 meses · conta criada em dez/2024. Linguagens (nº de repositórios): CSS (4) · HTML (4) · JavaScript (4) · Python (3) · PowerShell (2). Gerado pela API do GitHub em 13 nov 2026.</sub>
+<sub>Em texto: **6** projetos públicos · **52** commits nos repositórios públicos · **15** contribuições em **3** dias nos últimos 12 meses · conta criada em dez/2024. Linguagens (nº de repositórios): CSS (4) · HTML (4) · JavaScript (4) · Python (3) · PowerShell (2). Gerado pela API do GitHub em 13 nov 2026.</sub>
 <!-- stats:end -->
 
 <sub>Atualizado toda semana por uma GitHub Action com [`brand/stats.py`](brand/stats.py), sem serviço externo. O calendário de contribuições é o do próprio GitHub, logo abaixo deste README.</sub>

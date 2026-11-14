@@ -1,8 +1,8 @@
 """Gera os componentes visuais do README de perfil (SVG, sem serviço externo).
 
 Saídas:
-  assets/ui/perfil(-mobile).svg   painel do topo em estilo terminal (desktop 2 x 2 / celular empilhado)
-  assets/ui/btn-*.svg             botões de contato
+  assets/hero/perfil(-mobile).svg painel do topo em estilo terminal (desktop 2 x 2 / celular empilhado)
+  assets/hero/btn-*.svg           botões de contato
   assets/ui/legend.svg            legenda dos níveis do Tech Stack
   assets/ui/div-*.svg             divisores das categorias do Tech Stack
   assets/ui/timeline.svg          experiência e formação
@@ -355,10 +355,10 @@ def timeline() -> str:
 
 
 def main() -> None:
-    write("ui/perfil.svg", perfil())
-    write("ui/perfil-mobile.svg", perfil(mobile=True))
+    write("hero/perfil.svg", perfil())
+    write("hero/perfil-mobile.svg", perfil(mobile=True))
     for key, label, glyph in DATA["buttons"]:
-        write(f"ui/btn-{key}.svg", button(key, label, glyph))
+        write(f"hero/btn-{key}.svg", button(key, label, glyph))
     write("ui/legend.svg", legend())
     for key, (title, tiles) in DATA["stack"].items():
         write(f"ui/div-{key}.svg", divider(title))
@@ -367,7 +367,7 @@ def main() -> None:
     for cid, ic, lines, meta, status in DATA["certs"]:
         write(f"certs/{cid}.svg", cert(ic, lines, meta, status))
     write("ui/timeline.svg", timeline())
-    print("ok:", ", ".join(sorted(str(p.relative_to(ASSETS)).replace("\\", "/") for d in ("ui", "stack", "certs")
+    print("ok:", ", ".join(sorted(str(p.relative_to(ASSETS)).replace("\\", "/") for d in ("hero", "ui", "stack", "certs")
                                   for p in (ASSETS / d).glob("*.svg"))))
 
 
