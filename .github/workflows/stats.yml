@@ -1,4 +1,4 @@
-# Atualiza assets/stats.svg e o bloco em texto do README
+# Atualiza assets/sections/analytics(-mobile).svg e o bloco em texto do README
 # com dados da API do GitHub. Só faz commit quando algo mudou.
 name: Estatísticas do perfil
 
@@ -29,11 +29,11 @@ jobs:
         run: python brand/stats.py
       - name: Commit, se houver mudança
         run: |
-          if git diff --quiet -- assets/stats.svg README.md; then
+          if git diff --quiet -- assets/sections/analytics.svg assets/sections/analytics-mobile.svg README.md; then
             echo "Sem mudanças."; exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/stats.svg README.md
+          git add assets/sections/analytics.svg assets/sections/analytics-mobile.svg README.md
           git commit -m "Atualiza estatísticas do perfil"
           git push

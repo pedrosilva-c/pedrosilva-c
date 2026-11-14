@@ -1,11 +1,11 @@
 """Gera as estatísticas reais do perfil a partir da API do GitHub.
 
 Saídas (todas versionadas no repositório, sem serviço externo):
-  assets/stats.svg          números da conta e linguagens por repositório
+  assets/sections/analytics(-mobile).svg   painel GitHub Analytics (desktop / celular)
   README.md                 mesmo conteúdo em texto, entre <!-- stats:start --> e <!-- stats:end -->
 
 Uso:  python brand/stats.py            (token de GITHUB_TOKEN ou, se ausente, de `gh auth token`)
-Só usa a biblioteca padrão. Executado toda semana por .github/workflows/stats.yml.
+Só usa a biblioteca padrão e os módulos de brand/ (components, sections). Executado toda semana por .github/workflows/stats.yml.
 """
 from __future__ import annotations
 
@@ -16,17 +16,12 @@ import re
 import subprocess
 import sys
 import urllib.request
-from html import escape
 from pathlib import Path
 
 LOGIN = "Pedro-Osaka"
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.github.com"
 
-BG, SURFACE, BORDER = "#0F1419", "#151C23", "#2A3540"
-TEXT, MUTED, CYAN, PETROL = "#E8ECF0", "#9AA7B4", "#5FB6C8", "#2B8A9E"
-SANS = "Inter, 'Segoe UI', Helvetica, Arial, sans-serif"
-MONO = "'JetBrains Mono', Consolas, 'Courier New', monospace"
 MONTHS = "jan fev mar abr mai jun jul ago set out nov dez".split()
 
 
@@ -87,61 +82,80 @@ def date_label(iso: str) -> str:
     return f"{int(d)} {MONTHS[int(m) - 1]} {y}"
 
 
-def card(w: int, h: int, title: str, body: str) -> str:
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="{escape(title)}">
-<title>{escape(title)}</title>
-<defs><clipPath id="c"><rect width="{w}" height="{h}" rx="14"/></clipPath></defs>
-<g clip-path="url(#c)"><rect width="{w}" height="{h}" fill="{BG}"/><rect width="8" height="{h}" fill="{PETROL}"/></g>
-<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="none" stroke="#222C36"/>
-{body}
-</svg>
-"""
+LANG_ICONS = {"Python": "python", "PowerShell": "powershell", "JavaScript": "javascript", "TypeScript": "typescript",
+              "HTML": "html5", "CSS": "css3"}
 
 
-def mono(x, y, text, size, fill, anchor="start", weight=400):
-    """Texto monoespaçado com largura fixa (textLength): igual em qualquer fonte de fallback."""
-    tl = len(text) * size * 0.6
-    return (f'<text x="{x:g}" y="{y:g}" font-family="{MONO}" font-size="{size}" font-weight="{weight}" fill="{fill}" '
-            f'text-anchor="{anchor}" textLength="{tl:.1f}" lengthAdjust="spacingAndGlyphs">{escape(text)}</text>')
+def analytics_svg(s: dict, mobile: bool = False) -> str:
+    """Painel GitHub Analytics no estilo do topo.
 
+    Destaque para o que ajuda a ler o perfil (projetos, atividade recente, tempo de conta);
+    commits ficam numa linha secundária, sem número grande. Linguagens contadas por projeto
+    ("aparece em 4 de 6"), nunca em porcentagem de bytes.
+    """
+    from components import BORDER as BD, CYAN as CY, DIM, MUTED as MU, SOFT, SURFACE as SF, TEXT as TX, icon, mono_text
+    from sections import panel, sans
 
-def stats_svg(s: dict) -> str:
-    w, h = 840, 268
-    cells = [
-        (str(s["projects"]), "projetos públicos", "sem o repo de perfil"),
-        (str(s["commits"]), "commits", "repositórios públicos"),
-        (str(s["contributions"]), "contribuições", f"12 meses · {s['active_days']} dias ativos"),
+    metrics = [
+        (str(s["projects"]), "projetos públicos", "sem contar o repositório de perfil"),
+        (str(s["contributions"]), "contribuições", f"últimos 12 meses · {s['active_days']} dias ativos"),
         (month_label(s["since"]), "na conta desde", f"github.com/{LOGIN}"),
     ]
-    out = [f'<rect x="8" y="0" width="{w - 8}" height="42" fill="{SURFACE}" clip-path="url(#c)"/>',
-           f'<path d="M8 42.5H{w}" stroke="#222C36"/>',
-           mono(32, 26, "github analytics", 13, CYAN, weight=600),
-           mono(w - 24, 26, f"API do GitHub · {date_label(s['today'])}", 12, "#5E6B78", "end")]
-    cw = (w - 8) / 4
-    for i, (num, lab, sub) in enumerate(cells):
-        cx = 8 + cw * i + cw / 2
-        if i:
-            out.append(f'<path d="M{8 + cw * i:.1f} 66V170" stroke="{BORDER}"/>')
-        size = 38 if len(num) <= 4 else 28
-        out.append(f'<text x="{cx:.1f}" y="{112 if size == 38 else 108}" text-anchor="middle" font-family="{SANS}" '
-                   f'font-size="{size}" font-weight="700" fill="{CYAN}">{escape(num)}</text>')
-        out.append(f'<text x="{cx:.1f}" y="140" text-anchor="middle" font-family="{SANS}" font-size="14" font-weight="600" fill="{TEXT}">{escape(lab)}</text>')
-        out.append(mono(cx, 160, sub, 10.5, MUTED, "middle"))
-    out.append(f'<path d="M32 192.5H{w - 24}" stroke="#222C36"/>')
-    chips = [(name, n, len(f"{name} {n}") * 12 * 0.6 + 24) for name, n in s["languages"][:5]]
-    label_w = len("linguagens · repos") * 11 * 0.6
-    total = label_w + 18 + sum(c[2] for c in chips) + 8 * (len(chips) - 1)
-    x = (w + 8 - total) / 2
-    out.append(mono(x, 233, "linguagens · repos", 11, MUTED))
-    x += label_w + 18
-    for name, n, cw_ in chips:
-        out.append(f'<rect x="{x:.1f}" y="214.5" width="{cw_:.1f}" height="26" rx="7" fill="{SURFACE}" stroke="{BORDER}"/>')
-        out.append(mono(x + 12, 232, name, 12, "#C6D0DA"))
-        out.append(mono(x + 12 + (len(name) + 1) * 12 * 0.6, 232, str(n), 12, CYAN, weight=600))
-        x += cw_ + 8
-    title = (f"Estatísticas de {LOGIN}: {s['projects']} projetos públicos, {s['commits']} commits, "
-             f"{s['contributions']} contribuições em 12 meses")
-    return card(w, h, title, "\n".join(out))
+    langs = s["languages"][:5]
+    n = max(1, s["projects"])
+    if mobile:
+        w, pad, head = 720, 34, 50
+        f_num, f_lab, f_sub, row = 46, 23, 18, 96
+        top = head + 30
+        body_h = len(metrics) * row + 40 + 44 + len(langs) * 56
+        h = top + body_h + 34
+    else:
+        w, pad, head = 1280, 40, 48
+        f_num, f_lab, f_sub, row = 42, 20, 15, 86
+        top = head + 30
+        h = top + max(len(metrics) * row + 44, 40 + len(langs) * 50) + 26
+    # no celular a data sai do cabeçalho (sobreporia o comando) e vai para a linha de commits
+    out, _ = panel(w, h, f"pedro@infra:~$ gh api users/{LOGIN}", mobile, "" if mobile else f"atualizado {date_label(s['today'])}")
+    x0 = 10 + pad
+    for i, (num, lab, sub) in enumerate(metrics):
+        y = top + i * row
+        size = f_num if len(num) <= 4 else round(f_num * 0.72)
+        out.append(sans(x0, y + f_num * 0.92, num, size, CY, 700))
+        lx = x0 + (190 if mobile else 180)
+        out.append(sans(lx, y + f_lab + 6, lab, f_lab, TX, 600))
+        out.append(mono_text(lx, y + f_lab + 14 + f_sub, sub, f_sub, MU)[0])
+        if i < len(metrics) - 1:
+            out.append(f'<path d="M{x0} {y + row - 14}H{(w - 34) if mobile else 620}" stroke="{BD}" stroke-dasharray="3 5"/>')
+    cy = top + len(metrics) * row
+    commits = f"{s['commits']} commits nos repositórios públicos"
+    if mobile:
+        commits += f" · atualizado {date_label(s['today'])}"
+    out.append(mono_text(x0, cy + (8 if mobile else 6), commits, f_sub, DIM)[0])
+    if mobile:
+        ly = cy + 40 + 30
+        out.append(f'<path d="M{x0} {ly - 30}H{w - 34}" stroke="{BD}"/>')
+        lx0, bar_x, bar_w, step, f_name, f_val, isz = x0, x0 + 240, 300, 56, 22, 18, 30
+    else:
+        out.append(f'<path d="M660 {top - 6}V{h - 26}" stroke="{BD}"/>')
+        ly = top + 6
+        lx0, bar_x, bar_w, step, f_name, f_val, isz = 700, 900, 230, 50, 18, 14, 26
+    out.append(mono_text(lx0, ly, "linguagens · em quantos projetos aparecem", f_val, MU)[0])
+    for i, (name, cnt) in enumerate(langs):
+        y = ly + 26 + i * step
+        ic = LANG_ICONS.get(name)
+        if ic:
+            out.append(icon(ic, lx0, y, isz))
+        out.append(sans(lx0 + isz + 14, y + isz * 0.74, name, f_name, TX, 500))
+        by = y + isz / 2 - 5
+        out.append(f'<rect x="{bar_x}" y="{by:.1f}" width="{bar_w}" height="10" rx="5" fill="{SF}" stroke="{BD}"/>')
+        out.append(f'<rect x="{bar_x}" y="{by:.1f}" width="{bar_w * cnt / n:.1f}" height="10" rx="5" fill="{CY}"/>')
+        out.append(mono_text(bar_x + bar_w + 16, y + isz * 0.72, f"{cnt} de {n}", f_val, SOFT)[0])
+    title = (f"GitHub Analytics de {LOGIN}: {s['projects']} projetos públicos; {s['contributions']} contribuições em "
+             f"{s['active_days']} dias nos últimos 12 meses; na conta desde {month_label(s['since'])}; "
+             f"{s['commits']} commits nos repositórios públicos. Linguagens por projeto: "
+             + ", ".join(f"{nm} em {c} de {n}" for nm, c in langs) + ".")
+    from components import svg
+    return svg(w, h, title, "\n".join(out))
 
 
 def readme_block(s: dict) -> str:
@@ -157,7 +171,10 @@ def readme_block(s: dict) -> str:
 
 def main() -> int:
     s = collect(token())
-    (ROOT / "assets" / "stats.svg").write_text(stats_svg(s), encoding="utf-8", newline="\n")
+    out = ROOT / "assets" / "sections"
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "analytics.svg").write_text(analytics_svg(s), encoding="utf-8", newline="\n")
+    (out / "analytics-mobile.svg").write_text(analytics_svg(s, mobile=True), encoding="utf-8", newline="\n")
     readme = ROOT / "README.md"
     text = readme.read_text(encoding="utf-8")
     new = re.sub(r"<!-- stats:start -->.*?<!-- stats:end -->", lambda _: readme_block(s), text, flags=re.S)

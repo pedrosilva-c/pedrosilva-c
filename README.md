@@ -27,109 +27,94 @@ Quando um problema se repete, escrevo uma ferramenta em Python para resolvê-lo;
 
 ## Tech Stack
 
-<p align="center">
-<img src="assets/ui/legend.svg" alt="Legenda: verde, uso profissional; ciano, projetos próprios; cinza, fundamentos (curso concluído); âmbar tracejado, em estudo.">
-</p>
+<picture>
+<source media="(max-width: 600px)" srcset="assets/sections/stack-mobile.svg">
+<img src="assets/sections/stack.svg" alt="Tech Stack. Suporte e infraestrutura Windows: Windows (uso profissional), Win Server (uso profissional), Active Dir. (uso profissional), GPO (uso profissional), Hardware (uso profissional), Suporte N1 (uso profissional). Redes: TCP/IP (uso profissional), DNS (uso profissional), DHCP (uso profissional), Wi-Fi (uso profissional), Cabeamento (uso profissional). Cloud e segurança: AWS (fundamentos · curso), Segurança (fundamentos · curso), Azure (em estudo). Automação e sistemas: Python (projetos próprios), PowerShell (em estudo), FastAPI (projetos próprios), SQLite (projetos próprios), JavaScript (projetos próprios), TypeScript (projetos próprios), HTML (projetos próprios), CSS (projetos próprios), PySide6 (projetos próprios), Playwright (projetos próprios), pytest (projetos próprios). Ferramentas: Git (projetos próprios), GitHub (projetos próprios), VirtualBox (projetos próprios)." width="100%">
+</picture>
 
-<p align="center">
-<img src="assets/ui/div-infra.svg" alt="Suporte e infraestrutura Windows">
-<br>
-<img src="assets/stack/windows.svg" alt="Windows 10/11 — uso profissional" title="Windows 10/11 — uso profissional" width="70">&nbsp;<img src="assets/stack/windows-server.svg" alt="Windows Server — uso profissional" title="Windows Server — uso profissional" width="70">&nbsp;<img src="assets/stack/active-directory.svg" alt="Active Directory — uso profissional" title="Active Directory — uso profissional" width="70">&nbsp;<img src="assets/stack/gpo.svg" alt="GPO — uso profissional" title="GPO — uso profissional" width="70">&nbsp;<img src="assets/stack/hardware.svg" alt="Hardware — uso profissional" title="Hardware — uso profissional" width="70">&nbsp;<img src="assets/stack/suporte.svg" alt="Suporte N1 — uso profissional" title="Suporte N1 — uso profissional" width="70">
-<br><br>
-<img src="assets/ui/div-redes.svg" alt="Redes">
-<br>
-<img src="assets/stack/tcpip.svg" alt="TCP/IP — uso profissional" title="TCP/IP — uso profissional" width="70">&nbsp;<img src="assets/stack/dns.svg" alt="DNS — uso profissional" title="DNS — uso profissional" width="70">&nbsp;<img src="assets/stack/dhcp.svg" alt="DHCP — uso profissional" title="DHCP — uso profissional" width="70">&nbsp;<img src="assets/stack/wifi.svg" alt="Wi-Fi — uso profissional" title="Wi-Fi — uso profissional" width="70">&nbsp;<img src="assets/stack/cabeamento.svg" alt="Cabeamento e crimpagem — uso profissional" title="Cabeamento e crimpagem — uso profissional" width="70">
-<br><br>
-<img src="assets/ui/div-cloud.svg" alt="Cloud e segurança">
-<br>
-<img src="assets/stack/aws.svg" alt="AWS — fundamentos (curso concluído)" title="AWS — fundamentos (curso concluído)" width="70">&nbsp;<img src="assets/stack/ciberseguranca.svg" alt="Cibersegurança — fundamentos (curso Cisco concluído)" title="Cibersegurança — fundamentos (curso Cisco concluído)" width="70">&nbsp;<img src="assets/stack/azure.svg" alt="Microsoft Azure — em estudo" title="Microsoft Azure — em estudo" width="70">
-<br><br>
-<img src="assets/ui/div-dev.svg" alt="Automação e sistemas">
-<br>
-<img src="assets/stack/python.svg" alt="Python — projetos próprios" title="Python — projetos próprios" width="70">&nbsp;<img src="assets/stack/powershell.svg" alt="PowerShell — em estudo" title="PowerShell — em estudo" width="70">&nbsp;<img src="assets/stack/fastapi.svg" alt="FastAPI — projetos próprios" title="FastAPI — projetos próprios" width="70">&nbsp;<img src="assets/stack/sqlite.svg" alt="SQLite — projetos próprios" title="SQLite — projetos próprios" width="70">&nbsp;<img src="assets/stack/javascript.svg" alt="JavaScript — projetos próprios" title="JavaScript — projetos próprios" width="70">&nbsp;<img src="assets/stack/typescript.svg" alt="TypeScript — projetos próprios" title="TypeScript — projetos próprios" width="70">&nbsp;<img src="assets/stack/html5.svg" alt="HTML — projetos próprios" title="HTML — projetos próprios" width="70">&nbsp;<img src="assets/stack/css3.svg" alt="CSS — projetos próprios" title="CSS — projetos próprios" width="70">&nbsp;<img src="assets/stack/pyside6.svg" alt="PySide6 (Qt) — projetos próprios" title="PySide6 (Qt) — projetos próprios" width="70">&nbsp;<img src="assets/stack/playwright.svg" alt="Playwright — projetos próprios" title="Playwright — projetos próprios" width="70">&nbsp;<img src="assets/stack/pytest.svg" alt="pytest — projetos próprios" title="pytest — projetos próprios" width="70">
-<br><br>
-<img src="assets/ui/div-tools.svg" alt="Ferramentas">
-<br>
-<img src="assets/stack/git.svg" alt="Git — projetos próprios" title="Git — projetos próprios" width="70">&nbsp;<img src="assets/stack/github.svg" alt="GitHub — projetos próprios" title="GitHub — projetos próprios" width="70">&nbsp;<img src="assets/stack/virtualbox.svg" alt="VirtualBox — projetos próprios" title="VirtualBox — projetos próprios" width="70">
-<br><br>
-</p>
-
-<sub>Uso profissional: no trabalho. Projetos próprios: nos repositórios abaixo. Fundamentos: curso concluído (AWS Academy, Cisco). Em estudo: sem uso comprovado ainda. Sem barras de porcentagem.</sub>
+<sub>**Uso profissional:** no trabalho. **Projetos próprios:** nos repositórios abaixo. **Fundamentos:** curso concluído (AWS Academy, Cisco). **Em estudo:** sem uso comprovado ainda.</sub>
 
 ## GitHub Analytics
 
-<p align="center">
-<img src="assets/stats.svg" alt="GitHub Analytics desta conta. Os mesmos números estão em texto logo abaixo." width="100%">
-</p>
+<picture>
+<source media="(max-width: 600px)" srcset="assets/sections/analytics-mobile.svg">
+<img src="assets/sections/analytics.svg" alt="GitHub Analytics desta conta. Os mesmos números estão em texto logo abaixo." width="100%">
+</picture>
 
 <!-- stats:start -->
-<sub>Em texto: **6** projetos públicos · **52** commits nos repositórios públicos · **15** contribuições em **3** dias nos últimos 12 meses · conta criada em dez/2024. Linguagens (nº de repositórios): CSS (4) · HTML (4) · JavaScript (4) · Python (3) · PowerShell (2). Gerado pela API do GitHub em 13 nov 2026.</sub>
+<sub>Em texto: **6** projetos públicos · **53** commits nos repositórios públicos · **15** contribuições em **3** dias nos últimos 12 meses · conta criada em dez/2024. Linguagens (nº de repositórios): CSS (4) · HTML (4) · JavaScript (4) · Python (3) · PowerShell (2). Gerado pela API do GitHub em 13 nov 2026.</sub>
 <!-- stats:end -->
 
-<sub>Atualizado toda semana por uma GitHub Action com [`brand/stats.py`](brand/stats.py), sem serviço externo. O calendário de contribuições é o do próprio GitHub, logo abaixo deste README.</sub>
+<sub>Atualizado toda segunda-feira por uma GitHub Action com [`brand/stats.py`](brand/stats.py), direto da API do GitHub. O calendário de contribuições é o nativo, logo abaixo deste README.</sub>
 
 ## Projetos em destaque
 
-<table>
-<tr>
-<td width="50%" valign="top">
-<a href="https://github.com/Pedro-Osaka/kaizen-tech"><img src="assets/covers/kaizen-tech.png" alt="Capa do Kaizen Tech"></a>
-<br><img src="assets/status/funcional.svg" alt="Status: funcional" height="22">
-<br><b><a href="https://github.com/Pedro-Osaka/kaizen-tech">Kaizen Tech</a></b> · <sub>Python · Tkinter · PowerShell</sub>
-<br><sub>Utilitário de manutenção para técnicos de suporte: diagnóstico, ponto de restauração, limpeza com confirmação e relatório do atendimento em PDF. 14 testes.</sub>
-</td>
-<td width="50%" valign="top">
-<a href="https://github.com/Pedro-Osaka/lab-active-directory"><img src="assets/covers/lab-active-directory.png" alt="Capa do Laboratório Active Directory"></a>
-<br><img src="assets/status/em-documentacao.svg" alt="Status: em documentação" height="22">
-<br><b><a href="https://github.com/Pedro-Osaka/lab-active-directory">Laboratório Active Directory</a></b> · <sub>Windows Server 2019 · AD DS · DNS</sub>
-<br><sub>Domínio em VirtualBox com cliente Windows 10 em rede isolada e scripts PowerShell somente leitura para coletar evidências. As evidências ainda não foram coletadas.</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<a href="https://github.com/Pedro-Osaka/fleet-report-demo"><img src="assets/covers/fleet-report-demo.png" alt="Capa do Fleet Report Demo"></a>
-<br><img src="assets/status/funcional.svg" alt="Status: funcional" height="22">
-<br><b><a href="https://github.com/Pedro-Osaka/fleet-report-demo">Fleet Report Demo</a></b> · <sub>FastAPI · SQLite · pytest</sub>
-<br><sub>Importação conferida de planilhas e relatórios diários em XLSX e PDF. 20 testes, dados 100% fictícios.</sub>
-</td>
-<td width="50%" valign="top">
-<a href="https://github.com/Pedro-Osaka/inclusao-360"><img src="assets/covers/inclusao-360.png" alt="Capa do Inclusão 360°"></a>
-<br><img src="assets/status/concluido.svg" alt="Status: concluído" height="22">
-<br><b><a href="https://github.com/Pedro-Osaka/inclusao-360">Inclusão 360°</a></b> · <a href="https://pedro-osaka.github.io/inclusao-360/">demo ao vivo</a>
-<br><sub>Site para experimentar recursos de acessibilidade, com leitura em voz alta, VLibras e um desafio de correção. Projeto individual, v5.2.</sub>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<a href="https://github.com/Pedro-Osaka/campus-ai"><img src="assets/covers/campus-ai.png" alt="Capa do Campus AI"></a>
-<br><img src="assets/status/wip.svg" alt="Status: WIP, protótipo" height="22">
-<br><b><a href="https://github.com/Pedro-Osaka/campus-ai">Campus AI</a></b> · <sub>Python · PySide6 · Playwright</sub>
-<br><sub>Assistente acadêmico local que organiza materiais e prazos do Moodle no Obsidian. Protótipo, ainda não validado com contas reais. 566 testes Python e 97 da extensão.</sub>
-</td>
-<td width="50%" valign="top">
-<a href="https://github.com/Pedro-Osaka/portfolio"><img src="assets/covers/portfolio.png" alt="Capa do Portfólio"></a>
-<br><img src="assets/status/publicado.svg" alt="Status: publicado" height="22">
-<br><b><a href="https://github.com/Pedro-Osaka/portfolio">Portfólio</a></b> · <a href="https://pedro-osaka.github.io/portfolio/">site</a>
-<br><sub>Experiência, casos técnicos e laboratórios. HTML, CSS e JavaScript sem frameworks, publicado no GitHub Pages.</sub>
-</td>
-</tr>
-</table>
+<picture>
+<source media="(max-width: 600px)" srcset="assets/sections/status-legend-mobile.svg">
+<img src="assets/sections/status-legend.svg" alt="Legenda de status: verde com visto, pronto para uso; âmbar com meio círculo, em desenvolvimento; âmbar com documento, em documentação.">
+</picture>
+
+<div align="center">
+<a href="https://github.com/Pedro-Osaka/kaizen-tech"><picture>
+<source media="(max-width: 600px)" srcset="assets/sections/project-kaizen-tech-mobile.svg">
+<img src="assets/sections/project-kaizen-tech.svg" alt="Kaizen Tech — Funcional. Utilitário de manutenção para técnicos de suporte: diagnóstico, ponto de restauração, limpeza com confirmação e relatório do atendimento em PDF. Tecnologias: Python, Tkinter, PowerShell, fpdf2. 14 testes automatizados · uso em atendimentos." width="100%">
+</picture></a>
+<sub>Kaizen Tech: <a href="https://github.com/Pedro-Osaka/kaizen-tech">Repositório</a></sub>
+</div>
+<div align="center">
+<a href="https://github.com/Pedro-Osaka/lab-active-directory"><picture>
+<source media="(max-width: 600px)" srcset="assets/sections/project-lab-active-directory-mobile.svg">
+<img src="assets/sections/project-lab-active-directory.svg" alt="Laboratório Active Directory — Em documentação. Domínio Windows Server 2019 em VirtualBox, com cliente Windows 10 em rede isolada e scripts PowerShell somente leitura para coletar evidências. Tecnologias: Windows Server, AD DS, PowerShell, VirtualBox. ambiente existe · evidências ainda não coletadas." width="100%">
+</picture></a>
+<sub>Laboratório Active Directory: <a href="https://github.com/Pedro-Osaka/lab-active-directory">Repositório</a></sub>
+</div>
+<div align="center">
+<a href="https://github.com/Pedro-Osaka/fleet-report-demo"><picture>
+<source media="(max-width: 600px)" srcset="assets/sections/project-fleet-report-demo-mobile.svg">
+<img src="assets/sections/project-fleet-report-demo.svg" alt="Fleet Report Demo — Funcional. Importação conferida de planilhas de telemetria, com motivo de cada rejeição, e relatórios diários em XLSX e PDF. Tecnologias: Python, FastAPI, SQLite, pytest. 20 testes automatizados · dados 100% fictícios." width="100%">
+</picture></a>
+<sub>Fleet Report Demo: <a href="https://github.com/Pedro-Osaka/fleet-report-demo">Repositório</a></sub>
+</div>
+<div align="center">
+<a href="https://github.com/Pedro-Osaka/inclusao-360"><picture>
+<source media="(max-width: 600px)" srcset="assets/sections/project-inclusao-360-mobile.svg">
+<img src="assets/sections/project-inclusao-360.svg" alt="Inclusão 360° — Concluído · v5.2. Site para experimentar recursos de acessibilidade, com leitura em voz alta, VLibras e um desafio de correção de um portal fictício. Tecnologias: HTML, CSS, JavaScript, VLibras. 27 verificações de interface · projeto individual." width="100%">
+</picture></a>
+<sub>Inclusão 360°: <a href="https://github.com/Pedro-Osaka/inclusao-360">Repositório</a> · <a href="https://pedro-osaka.github.io/inclusao-360/">Demo ao vivo</a></sub>
+</div>
+<div align="center">
+<a href="https://github.com/Pedro-Osaka/campus-ai"><picture>
+<source media="(max-width: 600px)" srcset="assets/sections/project-campus-ai-mobile.svg">
+<img src="assets/sections/project-campus-ai.svg" alt="Campus AI — Em desenvolvimento. Assistente acadêmico local que organiza materiais e prazos do Moodle no Obsidian. Protótipo, ainda não validado com contas reais. Tecnologias: Python, PySide6, Playwright, SQLite. 566 testes Python + 97 da extensão." width="100%">
+</picture></a>
+<sub>Campus AI: <a href="https://github.com/Pedro-Osaka/campus-ai">Repositório</a></sub>
+</div>
+<div align="center">
+<a href="https://github.com/Pedro-Osaka/portfolio"><picture>
+<source media="(max-width: 600px)" srcset="assets/sections/project-portfolio-mobile.svg">
+<img src="assets/sections/project-portfolio.svg" alt="Portfólio — Publicado. Experiência, casos técnicos e laboratórios, com status declarado em cada item. Sem frameworks, publicado no GitHub Pages. Tecnologias: HTML, CSS, JavaScript, GitHub Pages. verificado em 375 a 1440 px, claro e escuro." width="100%">
+</picture></a>
+<sub>Portfólio: <a href="https://github.com/Pedro-Osaka/portfolio">Repositório</a> · <a href="https://pedro-osaka.github.io/portfolio/">Site publicado</a></sub>
+</div>
 
 Também participei do **[BarberFlow](https://pedro-osaka.github.io/portfolio/#projeto-barberflow)**, Projeto Integrador em grupo de 7 integrantes (requisitos, UML e arquitetura planejada em AWS).
 
 ## Certificações
 
 <p align="center">
-<a href="https://www.credly.com/go/B36iQJ1m"><img src="assets/certs/aws-cloud-foundations.svg" alt="AWS Academy Graduate — Cloud Foundations · AWS Academy · nov/2026 · verificável no Credly" width="268"></a>&nbsp;
-<img src="assets/certs/cisco-cybersecurity.svg" alt="Introduction to Cybersecurity · Cisco Networking Academy · abr/2026 · sem link público" width="268">&nbsp;
-<img src="assets/certs/cisco-redes.svg" alt="Fundamentos de Redes · Cisco Networking Academy · dados pendentes" width="268">
+<a href="https://www.credly.com/go/B36iQJ1m"><img src="assets/sections/cert-aws-cloud-foundations.svg" alt="AWS Academy Graduate — Cloud Foundations — AWS Academy — Training Badge · 20 h · nov/2026 — verificável no Credly" width="268"></a>&nbsp;
+<img src="assets/sections/cert-cisco-cybersecurity.svg" alt="Introduction to Cybersecurity — Cisco Networking Academy — abr/2026 — sem link público" width="268">&nbsp;
+<img src="assets/sections/cert-cisco-redes.svg" alt="Fundamentos de Redes — Cisco Networking Academy — nome oficial e data pendentes — dados pendentes" width="268">
 </p>
 
 <sub>Nome oficial, data e link de verificação de "Fundamentos de Redes" aguardam o comprovante da Cisco.</sub>
 
 ## Experiência e formação
 
-<img src="assets/ui/timeline.svg" alt="Experiência e formação: abr/2026 – atual, Jovem Aprendiz na equipe de TI, Transmargoo Turismo e Fretamento; fev/2025 – abr/2026, Estagiário de Suporte Técnico, Faculdade Dom Bosco (AEDB); em andamento, Sistemas de Informação, 4º período, Faculdade Dom Bosco (AEDB)." width="100%">
+<picture>
+<source media="(max-width: 600px)" srcset="assets/sections/experience-mobile.svg">
+<img src="assets/sections/experience.svg" alt="Experiência e formação: o que foi feito em cada função, com período, e a graduação em andamento. O mesmo conteúdo está em texto logo abaixo." width="100%">
+</picture>
 
 <details>
 <summary><b>Atividades em detalhe</b></summary>
@@ -147,4 +132,5 @@ Atendimento N1 presencial; manutenção preventiva e corretiva nos laboratórios
 
 <br>
 
-<p align="center"><sub>Uso assistentes de IA (Claude Code, Codex) no desenvolvimento; as decisões, os testes e a revisão são meus. · Visual gerado a partir de <a href="brand/">brand/</a>, sem serviços externos.</sub></p>
+<p align="center"><img src="assets/sections/footer.svg" alt="Fim do perfil"><br>
+<sub>Visual e estatísticas gerados em <a href="brand/">brand/</a>, sem serviços externos. Uso assistentes de IA (Claude Code, Codex) no desenvolvimento; as decisões, os testes e a revisão são meus.</sub></p>

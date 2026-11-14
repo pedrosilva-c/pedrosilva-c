@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="28" viewBox="0 0 500 28" role="img" aria-label="Legenda de status: verde com visto, pronto para uso; âmbar com meio círculo, em desenvolvimento; âmbar com documento, em documentação.">
+<title>Legenda de status: verde com visto, pronto para uso; âmbar com meio círculo, em desenvolvimento; âmbar com documento, em documentação.</title>
+<svg x="4" y="6" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6CC79A" color="#6CC79A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+<text x="26" y="19" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="400" fill="#9AA7B4" text-anchor="start" textLength="117.0" lengthAdjust="spacingAndGlyphs">pronto para uso</text>
+<svg x="169.0" y="6" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E0A030" color="#E0A030" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg>
+<text x="191" y="19" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="400" fill="#9AA7B4" text-anchor="start" textLength="140.4" lengthAdjust="spacingAndGlyphs">em desenvolvimento</text>
+<svg x="357.4" y="6" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E0A030" color="#E0A030" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+<text x="379.4" y="19" font-family="'JetBrains Mono', 'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="400" fill="#9AA7B4" text-anchor="start" textLength="117.0" lengthAdjust="spacingAndGlyphs">em documentação</text>
+</svg>

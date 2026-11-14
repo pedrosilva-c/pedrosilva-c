@@ -43,21 +43,17 @@ Para mudar textos ou diagramas, edite o objeto `DATA` no HTML.
 ## Componentes do README
 
 ```powershell
-py brand\components.py   # assets/hero, assets/ui, assets/stack e assets/certs
+py brand\components.py   # topo: assets/hero (painel e botões)
+py brand\sections.py     # seções: assets/sections (Tech Stack, projetos, certificações, experiência, rodapé)
+py brand\stats.py        # assets/sections/analytics(-mobile).svg e o bloco <!-- stats --> do README
 ```
 
-Painel do topo em estilo terminal (`perfil.svg` 2 x 2 e `perfil-mobile.svg` empilhado, servido por `<picture>` abaixo de 600 px), botões de contato de largura igual, legenda e divisores do Tech Stack, um bloco por tecnologia, cartões de certificação e linha do tempo. Tudo em SVG, gerado a partir do objeto `DATA` no script; nada é desenhado à mão nem carregado de serviço externo.
+Todas as seções seguem a moldura do painel do topo: barra de título com três pontos e um comando (`ls stack/`, `gh api`, `history`), barra petróleo à esquerda, raio 20. Cada peça larga tem versão de desktop (1280 de referência) e de celular (720), servida por `<picture>` abaixo de 600 px, porque a área útil do GitHub a 390 px é de 293 px.
 
-- **Níveis no Tech Stack** (ponto no canto do bloco): verde = uso profissional, ciano = projetos próprios, cinza = fundamentos (curso concluído), âmbar tracejado = em estudo. Mesmo critério do portfólio.
-- **Logotipos** oficiais em [`_source/icons/`](_source/icons/) (Devicon e Simple Icons, ver `LICENSES.md`). Tecnologias sem logotipo próprio (AD, GPO, DNS, DHCP, TCP/IP) usam monograma, nunca um logotipo inventado.
+- **Tech Stack:** uma linha por categoria; o nível fica no canto de cada bloco (verde = uso profissional, ciano = projetos próprios, cinza = fundamentos/curso concluído, âmbar tracejado = em estudo), mesmo critério do portfólio. Os dados estão em `DATA["stack"]` de `components.py`.
+- **Projetos:** cartão horizontal com a capa do repositório embutida (PNG reduzido em `data:`, permitido pela CSP do GitHub para SVG em `<img>`). Barra e selo de status: verde com visto = pronto para uso; âmbar com meio círculo = em desenvolvimento; âmbar com documento = em documentação (âmbar segue a regra de cores das capas). Requer Pillow.
+- **GitHub Analytics:** destaque para projetos, contribuições e tempo de conta; commits em linha secundária; linguagens contadas por projeto ("4 de 6"), sem porcentagem de bytes. A Action [`stats.yml`](../.github/workflows/stats.yml) roda toda segunda-feira, só com a API do GitHub, e só faz commit quando algo mudou.
+- **Logotipos** oficiais em [`_source/icons/`](_source/icons/) (Devicon e Simple Icons, ver `LICENSES.md`). Sem logotipo próprio (AD, GPO, DNS, DHCP, TCP/IP, Tkinter, VLibras), usa-se monograma ou texto, nunca um logotipo inventado.
 - **Texto** monoespaçado com `textLength`, para manter a largura com qualquer fonte de fallback.
-- Cada imagem tem `alt` com o conteúdo completo; o README traz o mesmo conteúdo em texto (blocos recolhíveis e estatísticas).
-
-## Estatísticas e selos
-
-```powershell
-py brand\stats.py    # assets/stats.svg e o bloco <!-- stats --> do README
-py brand\status.py   # assets/status/*.svg (selos da grade de projetos)
-```
-
-`stats.py` usa só a biblioteca padrão e a API do GitHub (token de `GITHUB_TOKEN` ou de `gh auth token`). Os números vêm da API: projetos públicos (sem o repositório de perfil), commits nos repositórios públicos, contribuições dos últimos 12 meses (o calendário fica a cargo do gráfico nativo do GitHub) e linguagens contadas por repositório, sem porcentagens. A Action [`stats.yml`](../.github/workflows/stats.yml) roda toda segunda-feira e só faz commit quando algo mudou. Os mesmos números ficam em texto no README, para quem não carrega imagens.
+- **Acessibilidade:** cada imagem tem `alt` com o conteúdo completo; o README mantém em texto as estatísticas, "Sobre mim" e as atividades.
+- **Cache da CDN:** ao redesenhar uma peça, use um caminho novo. O GitHub chegou a servir por mais de 10 minutos a versão antiga de um arquivo regravado no mesmo caminho.
