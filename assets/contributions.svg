@@ -390,6 +390,7 @@
 <rect x="1132" y="164" width="16" height="16" rx="3" fill="#2B8A9E"><title>2026-11-11: 6</title></rect>
 <rect x="1132" y="184" width="16" height="16" rx="3" fill="#1A232C" stroke="#2A3540" stroke-width="0.5"><title>2026-11-12: 0</title></rect>
 <rect x="1132" y="204" width="16" height="16" rx="3" fill="#5FB6C8"><title>2026-11-13: 8</title></rect>
+<rect x="1132" y="224" width="16" height="16" rx="3" fill="#1A232C" stroke="#2A3540" stroke-width="0.5"><title>2026-11-14: 0</title></rect>
 <text x="1036" y="280" text-anchor="end" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12" fill="#5E6B78">menos</text>
 <rect x="1048" y="268" width="16" height="16" rx="3" fill="#1A232C"/>
 <rect x="1068" y="268" width="16" height="16" rx="3" fill="#1C4D58"/>
@@ -397,5 +398,5 @@
 <rect x="1108" y="268" width="16" height="16" rx="3" fill="#2B8A9E"/>
 <rect x="1128" y="268" width="16" height="16" rx="3" fill="#5FB6C8"/>
 <text x="1152" y="280" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12" fill="#5E6B78">mais</text>
-<text x="92" y="280" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12" fill="#5E6B78">API do GitHub · 13 nov 2026</text>
+<text x="92" y="280" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12" fill="#5E6B78">API do GitHub · 14 nov 2026</text>
 </svg>
