@@ -43,8 +43,8 @@ Para mudar textos ou diagramas, edite o objeto `DATA` no HTML.
 ## Estatísticas e selos
 
 ```powershell
-py brand\stats.py    # assets/stats.svg, assets/contributions.svg e o bloco <!-- stats --> do README
+py brand\stats.py    # assets/stats.svg e o bloco <!-- stats --> do README
 py brand\status.py   # assets/status/*.svg (selos da grade de projetos)
 ```
 
-`stats.py` usa só a biblioteca padrão e a API do GitHub (token de `GITHUB_TOKEN` ou de `gh auth token`). Os números vêm da API: projetos públicos (sem o repositório de perfil), commits nos repositórios públicos, contribuições dos últimos 12 meses e linguagens contadas por repositório, sem porcentagens. A Action [`stats.yml`](../.github/workflows/stats.yml) roda toda segunda-feira e só faz commit quando algo mudou. Os mesmos números ficam em texto no README, para quem não carrega imagens.
+`stats.py` usa só a biblioteca padrão e a API do GitHub (token de `GITHUB_TOKEN` ou de `gh auth token`). Os números vêm da API: projetos públicos (sem o repositório de perfil), commits nos repositórios públicos, contribuições dos últimos 12 meses (o calendário fica a cargo do gráfico nativo do GitHub) e linguagens contadas por repositório, sem porcentagens. A Action [`stats.yml`](../.github/workflows/stats.yml) roda toda segunda-feira e só faz commit quando algo mudou. Os mesmos números ficam em texto no README, para quem não carrega imagens.

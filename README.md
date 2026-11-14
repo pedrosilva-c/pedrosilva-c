@@ -38,14 +38,10 @@ Quando um problema se repete, escrevo uma ferramenta em Python ou PowerShell par
 <img src="assets/stats.svg" alt="Estatísticas desta conta no GitHub. Os mesmos números estão em texto logo abaixo." width="100%">
 
 <!-- stats:start -->
-<sub>Em texto: **6** projetos públicos · **46** commits nos repositórios públicos · **15** contribuições em **3** dias nos últimos 12 meses · conta criada em dez/2024. Linguagens (nº de repositórios): CSS (4) · HTML (4) · JavaScript (4) · Python (3) · PowerShell (2). Gerado pela API do GitHub em 14 nov 2026.</sub>
+<sub>Em texto: **6** projetos públicos · **47** commits nos repositórios públicos · **15** contribuições em **3** dias nos últimos 12 meses · conta criada em dez/2024. Linguagens (nº de repositórios): CSS (4) · HTML (4) · JavaScript (4) · Python (3) · PowerShell (2). Gerado pela API do GitHub em 13 nov 2026.</sub>
 <!-- stats:end -->
 
-## Contribuições
-
-<img src="assets/contributions.svg" alt="Calendário de contribuições desta conta nos últimos 12 meses." width="100%">
-
-<sub>Imagens geradas pela API do GitHub com [`brand/stats.py`](brand/stats.py) e atualizadas toda semana por uma GitHub Action. Nenhum serviço externo. O calendário conta só as contribuições atribuídas a esta conta.</sub>
+<sub>Atualizado toda semana por uma GitHub Action com [`brand/stats.py`](brand/stats.py), sem serviço externo. O calendário de contribuições é o do próprio GitHub, logo abaixo deste README.</sub>
 
 ## Projetos em destaque
 
@@ -102,7 +98,9 @@ Também participei do **[BarberFlow](https://pedro-osaka.github.io/portfolio/#pr
 |---|---|---|---|
 | AWS Academy Graduate — Cloud Foundations | AWS Academy | nov/2026 | [Credly](https://www.credly.com/go/B36iQJ1m) |
 | Introduction to Cybersecurity | Cisco Networking Academy | abr/2026 | — |
-| Fundamentos de Redes | Cisco Networking Academy | — | — |
+| Fundamentos de Redes | Cisco Networking Academy | pendente | pendente |
+
+<sub>Nome oficial, data e link de verificação de "Fundamentos de Redes" aguardam o comprovante da Cisco.</sub>
 
 ## Formação e experiência
 
